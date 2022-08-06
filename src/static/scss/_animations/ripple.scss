@@ -1,0 +1,20 @@
+.ripple-span{
+    position: absolute;
+    background-color: #ffffff;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: rippleAnimation 1s linear infinite;
+}
+@keyframes rippleAnimation{
+0%{
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+}
+100%{
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+}
+}

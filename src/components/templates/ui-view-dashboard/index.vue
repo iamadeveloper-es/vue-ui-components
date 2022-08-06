@@ -3,8 +3,8 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-8 gap-2">
                 <div 
-                id="app-nav"
-                class="app-nav col-span-2 border-r-2 border-sky-500 px-3"
+                id="ui-nav"
+                class="ui-nav col-span-2 border-r-2 px-3"
                 >
                     <ul class="ui-menu">
                         <li
@@ -68,9 +68,9 @@ export default {
         border-radius: 3px;
     }
     .ui-menu-children{
-        display: none;
+            display: none;
         &.ui-menu-children-active{
-        display: block;
+            display: block;
         }
     }
 }
