@@ -1,5 +1,5 @@
 {
-  "name": "vue-ui-components",
+  "name": "@iamadeveloper-es/vue-ui-components",
   "version": "1.0.0",
   "private": true,
   "description": "Library to handle ui with Vue",
