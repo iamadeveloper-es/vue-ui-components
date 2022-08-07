@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ComponentsView from '@/pages/ui-view-components'
 
-import UiButtonDemo from '@/components/atoms/ui-button/demo'
+import UiButtonDemo from '@/components/molecules/ui-button/demo'
 
 Vue.use(VueRouter)
 
@@ -12,18 +12,20 @@ export const routes = [
     path: '/atoms',
     component: ComponentsView,
     children: [
-      {
-        name: 'Ui-button',
-        path: '/button-demo',
-        component: UiButtonDemo,
-      }
+      
     ]
   },
   {
     name: 'Molecules',
     path: '/molecules',
     component: ComponentsView,
-    children: []
+    children: [
+      {
+        name: 'Ui-button',
+        path: '/button-demo',
+        component: UiButtonDemo,
+      }
+    ]
   },
   {
     name: 'Cells',
