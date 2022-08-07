@@ -1,7 +1,7 @@
 {
   "name": "@iamadeveloper-es/vue-ui-components",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "description": "Library to handle ui with Vue",
   "author": "iamadeveloper-es",
   "main": "main.js",
