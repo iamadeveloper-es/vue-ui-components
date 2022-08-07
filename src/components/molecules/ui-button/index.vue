@@ -4,19 +4,29 @@
     :class="classes"
     :type="btnType"
     :disabled="disabled"
-    @click="handleEvent($event), rippleEffect($event)"
+    @click.stop="handleEvent($event), rippleEffect($event)"
     >
-    {{btnText}}
+    <span
+    class="pointers-none"
+    >{{btnText}}</span>
     <span
     v-if="isCloseBtn"
-    class="close"
+    class="pointers-none"
     >&#x2715;</span>
+    <ui-icon
+    v-if="icon"
+    :icon="icon"
+    ></ui-icon>
     </button>
 </template>
 <script>
-import UiMixinRippleEffect from '@/mixin/rippleEffect'
+import UiIcon from '../../atoms/ui-icon'
+import UiMixinRippleEffect from '../../../mixin/rippleEffect'
 export default {
     name: 'ui-button',
+    components: {
+        UiIcon
+    },
     mixins: [
         UiMixinRippleEffect
     ],
@@ -38,9 +48,13 @@ export default {
         isCloseBtn: {
             type: Boolean,
             default: false
+        },
+        icon :{
+            type: Object
         }
     },
     methods:{
+        
         handleEvent(ev){
             this.$emit('clicked', ev)
         }
@@ -86,7 +100,7 @@ export default {
   &:hover{
       opacity: .9;
   }
-  .close{
+  .pointers-none{
     pointer-events: none;
   }
 }
