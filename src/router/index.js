@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ComponentsView from '@/pages/ui-view-components'
 
+import UiIcon from '@/components/atoms/ui-icon/demo'
+
 import UiButtonDemo from '@/components/molecules/ui-button/demo'
 import UiLinkDemo from '@/components/molecules/ui-link/demo'
 
@@ -13,7 +15,11 @@ export const routes = [
     path: '/atoms',
     component: ComponentsView,
     children: [
-      
+      {
+        name: 'Ui-icon',
+        path: '/icon-demo',
+        component: UiIcon,
+      },
     ]
   },
   {
