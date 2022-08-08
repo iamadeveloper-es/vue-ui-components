@@ -62,12 +62,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .ui-button{
     position: relative;
     display: inline-block;
     text-align: center;
     overflow: hidden;
+    border: none;
     cursor: pointer;
     &--regular{
         background-color: #2d86cf;
