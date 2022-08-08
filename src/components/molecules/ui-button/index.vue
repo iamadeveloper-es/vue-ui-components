@@ -69,6 +69,7 @@ export default {
     text-align: center;
     overflow: hidden;
     border: none;
+    background-color: transparent;
     cursor: pointer;
     &--regular{
         background-color: #2d86cf;
@@ -76,7 +77,6 @@ export default {
         padding: 14px 10px;
         margin: 5px;
         border-radius: 3px;
-        border: none;
         line-height: 1.4;
     }
     &--small{
@@ -85,7 +85,6 @@ export default {
         padding: 4px 8px;
         margin: 5px;
         border-radius: 3px;
-        border: none;
         line-height: 1.4;
     }
     &--close{
