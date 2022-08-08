@@ -8,6 +8,7 @@ import UiImageDemo from '@/components/atoms/ui-image/demo'
 import UiBreadcrumbsDemo from '@/components/molecules/ui-breadcrumbs/demo'
 import UiButtonDemo from '@/components/molecules/ui-button/demo'
 import UiLinkDemo from '@/components/molecules/ui-link/demo'
+import UiSnackbar from '@/components/molecules/ui-snackbar/demo'
 import UiTabDemo from '@/components/molecules/ui-tab/demo'
 
 Vue.use(VueRouter)
@@ -49,6 +50,11 @@ export const routes = [
         name: 'Ui-link',
         path: '/link-demo',
         component: UiLinkDemo,
+      },
+      {
+        name: 'Ui-snackbar',
+        path: '/snackbar-demo',
+        component: UiSnackbar,
       },
       {
         name: 'Ui-tab',
