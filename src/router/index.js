@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import ComponentsView from '@/pages/ui-view-components'
 
 import UiButtonDemo from '@/components/molecules/ui-button/demo'
+import UiLinkDemo from '@/components/molecules/ui-link/demo'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,11 @@ export const routes = [
         name: 'Ui-button',
         path: '/button-demo',
         component: UiButtonDemo,
+      },
+      {
+        name: 'Ui-link',
+        path: '/link-demo',
+        component: UiLinkDemo,
       }
     ]
   },
