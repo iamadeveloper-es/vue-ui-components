@@ -24,7 +24,7 @@ export default {
                 {
                     src: 'dummy-image.jpg',
                     alt: 'Text image 1',
-                    class: 'fluid',
+                    class: 'ui-image--fluid',
                     definition: 'Responsive image with class "fluid"'
                 },
                 {
@@ -46,6 +46,11 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import '../mixins/ui-image';
+
+.ui-image{
+    @include image;
+}
 
 </style>

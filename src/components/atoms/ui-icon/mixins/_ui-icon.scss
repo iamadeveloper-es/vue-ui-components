@@ -1,0 +1,4 @@
+@mixin icon($base){
+    font-size: inherit;
+    font-size: map-get($base, 'size');
+}

@@ -7,11 +7,11 @@
     @click.stop="handleEvent($event), rippleEffect($event)"
     >
     <span
-    class="pointers-none"
+    class="ui-button--pointers-none"
     >{{btnText}}</span>
     <span
     v-if="isCloseBtn"
-    class="pointers-none"
+    class="ui-button--pointers-none"
     >&#x2715;</span>
     <ui-icon
     v-if="icon"
@@ -62,46 +62,5 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.ui-button{
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    overflow: hidden;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    &--regular{
-        background-color: #2d86cf;
-        color: white;
-        padding: 14px 10px;
-        margin: 5px;
-        border-radius: 3px;
-        line-height: 1.4;
-    }
-    &--small{
-        background-color: #2d86cf;
-        color: white;
-        padding: 4px 8px;
-        margin: 5px;
-        border-radius: 3px;
-        line-height: 1.4;
-    }
-    &--close{
-        padding: 10px;
-        margin-left: 10px;
-    }
-    &--tab{
-        color: black;
-    }
-    &--tab-active{
-        border-bottom: 3px solid var(--primary-blue)
-    }
-  &:hover{
-      opacity: .9;
-  }
-  .pointers-none{
-    pointer-events: none;
-  }
-}
+<style>
 </style>

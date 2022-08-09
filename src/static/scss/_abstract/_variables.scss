@@ -1,6 +1,8 @@
 :root{
     /* Colors. */
     --white: #ffffff;
+    --black: #000000;
+    --dark: #333333;
     --primary-blue: #1a759f;
     --primary-grey: #edf6f9;
     --secondary-grey: #d9dbdb;
@@ -9,6 +11,9 @@
     --success: #3bc53b;
     --warning: #eee024;
     --danger: #eb3636;
+
+    /* Text colors */
+    ----primary-text-color : var(--black);
 
     /* Border */
     --radius-small: 3px;

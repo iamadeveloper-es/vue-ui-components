@@ -8,6 +8,7 @@
             <app-link
             :route="data.route"
             :label="data.label"
+            :classes="['ui-link--underline']"
             :icon="data.icon"
             ></app-link>
             <div>
@@ -54,6 +55,14 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import '../mixins/ui-link';
 
+$base : (
+    'primary-text-color': var(--primary-blue)
+    );
+
+.ui-link{
+    @include link($base);
+}
 </style>

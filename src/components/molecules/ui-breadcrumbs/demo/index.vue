@@ -56,6 +56,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '../mixins/ui-breadcrumbs';
 
+.ui-breadcrumbs{
+  @include breadcrumbs;
+}
 </style>

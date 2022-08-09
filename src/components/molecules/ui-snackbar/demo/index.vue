@@ -44,6 +44,17 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '../mixins/ui-snackbar';
+@import '../mixins/transitions';
 
+$base : (
+    'color': var(--dark),
+    'text-color': var(--white),
+    'radius-size': var(--radius-small)
+    );
+
+.ui-snackbar{
+    @include snackbar($base);
+}
 </style>

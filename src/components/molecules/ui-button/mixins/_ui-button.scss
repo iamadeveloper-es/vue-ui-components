@@ -1,0 +1,52 @@
+@mixin button($base) {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    border: none;
+    border-radius: map-get($base, 'radius-size');
+    background-color: map-get($base, 'primary-color');
+    color: map-get($base, 'primary-text-color');
+    cursor: pointer;
+
+    &--regular {
+        color: white;
+        padding: map-get($base, 'size-regular');
+        line-height: 1.4;
+    }
+
+    &--small {
+        color: white;
+        padding: map-get($base, 'size-small');
+        border-radius: map-get($base, 'radius-size');
+        line-height: 1.8;
+    }
+
+    &--close {
+        padding: 10px;
+        margin-left: 10px;
+    }
+
+    &--tab {
+        //TODO: Styles
+        background-color: transparent;
+    }
+
+    &--tab-active {
+        border-bottom: map-get($base, 'radius-size') solid var(--primary-blue)
+    }
+
+    &:hover {
+        opacity: .9;
+    }
+
+    &--pointers-none {
+        pointer-events: none;
+    }
+
+    .ui-icon{
+        color: currentColor;
+    }
+}

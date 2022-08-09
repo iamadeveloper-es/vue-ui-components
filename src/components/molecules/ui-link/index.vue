@@ -1,6 +1,7 @@
 <template>
     <router-link
     class="ui-link"
+    :class="classes"
     :to="route"
     >
         <span>{{ label }}</span>
@@ -25,6 +26,9 @@ export default {
         label:{
             type: String
         },
+        classes: {
+            type: [Array]
+        },
         icon :{
             type: Object
         }
@@ -32,9 +36,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.ui-link{
-    text-decoration: underline;
-    color: #00a2ff;
-}
+<style>
 </style>

@@ -1,0 +1,20 @@
+@mixin tab($base){
+    &__ul{
+        display: flex;
+        align-items: center;
+    }
+    &__li{
+            padding-top: map-get($base, 'vertical-space');
+            padding-bottom: map-get($base, 'vertical-space');
+            padding-right: map-get($base, 'horizontal-space');
+        &:not(:first-child){
+            padding: map-get($base, 'vertical-space') map-get($base, 'horizontal-space');
+        }
+    }
+    &__hidden-blocks{
+        margin-top: 1rem;
+        padding: 1rem;
+        border: 2px solid var(--secondary-grey);
+        border-radius: var(--radius-small);
+    }
+}

@@ -66,24 +66,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.ui-snackbar{
-    padding: 10px 15px;
-    background: #2c2c2c;
-    color: #ffffff;
-    border-radius: 3px;
-    position: fixed;
-    bottom: 1rem;
-}
-//- transitions
-.snackbar-fade-enter,
-  .snackbar-fade-leave-to {
-    opacity: 0;
-    transform: scale(0);
-  }
-
-.snackbar-fade-enter-active,
-.snackbar-fade-leave-active {
-    transition: transform .2s ease-in-out, opacity .2s ease-in-out;
-}
-</style>
+<style lang="scss"></style>

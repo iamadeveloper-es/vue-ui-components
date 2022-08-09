@@ -10,7 +10,7 @@
         >
             <router-link 
             :event="index !== isDisabled ? 'click' : ''"
-            :class="index === isDisabled ? 'disbaledLink' : ''"
+            :class="index === isDisabled ? 'ui-breadcrumbs--disbaledLink' : ''"
             :to="item.route"
             >{{item.label}}
                 <span
@@ -47,11 +47,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.ui-breadcrumbs{
-    .disbaledLink{
-        color: var(--tertiary-grey);
-        cursor: auto;
-    }
-}
+<style>
 </style>

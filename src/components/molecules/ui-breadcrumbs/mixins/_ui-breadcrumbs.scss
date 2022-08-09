@@ -1,0 +1,6 @@
+@mixin breadcrumbs{
+    &--disbaledLink {
+        color: var(--tertiary-grey);
+        cursor: auto;
+    }
+}

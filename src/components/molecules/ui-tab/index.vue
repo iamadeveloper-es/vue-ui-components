@@ -1,7 +1,10 @@
 <template>
     <div class="ui-tab">
-        <ul>
-            <li v-for="(option, index) in options" :key="index">
+        <ul class="ui-tab__ul">
+            <li 
+            class="ui-tab__li"
+            v-for="(option, index) in options" 
+            :key="index">
               <ui-button
               @clicked="handleAction(option.action)"
               :classes="option.action === itemSelected ? 'ui-button--tab ui-button--tab-active' : 'ui-button--tab'"
@@ -10,6 +13,12 @@
               </ui-button>
             </li>
         </ul>
+        <div
+        v-if="this.$slots['tab-content']"
+        class="ui-tab__hidden-blocks"
+        >
+          <slot name="tab-content"></slot>
+        </div>
     </div>
 </template>
 
@@ -39,13 +48,5 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
-.ui-tab{
-  ul{
-    display: flex;
-  }
-  ul li{
-    padding: .2rem .5rem;
-  }
-}
+<style>
 </style>

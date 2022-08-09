@@ -1,0 +1,7 @@
+@mixin link($base){
+    color: map-get($base, 'primary-text-color');
+
+    &--underline{
+        text-decoration: underline;
+    }
+}

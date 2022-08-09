@@ -1,0 +1,8 @@
+@mixin snackbar($base){
+    padding: 10px 15px;
+    background: map-get($base, 'color');
+    color: map-get($base, 'text-color');
+    border-radius: map-get($base, 'radius-size');
+    position: fixed;
+    bottom: 1rem;
+}

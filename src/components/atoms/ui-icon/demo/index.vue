@@ -61,6 +61,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '../mixins/ui-icon';
 
+$base: ('size': 18px);
+
+.ui-icon{
+    @include icon($base);
+}
 </style>

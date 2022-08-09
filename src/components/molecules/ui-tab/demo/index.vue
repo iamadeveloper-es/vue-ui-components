@@ -4,18 +4,19 @@
             :options="navOptions"
             :itemSelected="blockSelected"
             @tabAction="setBlockSelected($event)"
-        ></ui-tab>
-        <div class="hidden-blocks">
+        >
+          <div slot="tab-content">
             <div v-if="blockSelected === 'block-first'">
-            {{ 'Selected block: ' + blockSelected }}
+              {{ 'Selected block: ' + blockSelected }}
+              </div>
+              <div v-if="blockSelected === 'block-second'">
+              {{ 'Selected block: ' + blockSelected }}
+              </div>
+              <div v-if="blockSelected === 'block-third'">
+              {{ 'Selected block: ' + blockSelected }}
+              </div>
             </div>
-            <div v-if="blockSelected === 'block-second'">
-            {{ 'Selected block: ' + blockSelected }}
-            </div>
-            <div v-if="blockSelected === 'block-third'">
-            {{ 'Selected block: ' + blockSelected }}
-            </div>
-        </div>
+        </ui-tab>
     </div>
 </template>
 
@@ -53,11 +54,15 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.hidden-blocks{
-    margin-top: 1rem;
-    padding: 1rem;
-    border: 2px solid var(--secondary-grey);
-    border-radius: var(--radius-small);
+<style lang="scss">
+@import '../mixins/ui-tab';
+
+$base : (
+    'horizontal-space': .5rem,
+    'vertical-space': .2rem
+    );
+
+.ui-tab{
+    @include tab($base);
 }
 </style>
