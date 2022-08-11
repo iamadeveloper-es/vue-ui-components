@@ -1,6 +1,8 @@
 @mixin link($base){
     color: map-get($base, 'primary-text-color');
-
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     &--underline{
         text-decoration: underline;
     }
