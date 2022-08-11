@@ -10,6 +10,7 @@ import UiButtonDemo from '@/components/molecules/ui-button/demo'
 import UiLinkDemo from '@/components/molecules/ui-link/demo'
 import UiModalDemo from '@/components/molecules/ui-modal/demo'
 import UiSnackbar from '@/components/molecules/ui-snackbar/demo'
+import UiSpinner from '@/components/molecules/ui-spinner/demo'
 import UiTabDemo from '@/components/molecules/ui-tab/demo'
 
 Vue.use(VueRouter)
@@ -61,6 +62,11 @@ export const routes = [
         name: 'Ui-snackbar',
         path: '/snackbar-demo',
         component: UiSnackbar,
+      },
+      {
+        name: 'Ui-spinner',
+        path: '/spinner-demo',
+        component: UiSpinner,
       },
       {
         name: 'Ui-tab',
