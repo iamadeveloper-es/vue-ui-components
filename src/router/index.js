@@ -8,6 +8,7 @@ import UiImageDemo from '@/components/atoms/ui-image/demo'
 import UiBreadcrumbsDemo from '@/components/molecules/ui-breadcrumbs/demo'
 import UiButtonDemo from '@/components/molecules/ui-button/demo'
 import UiLinkDemo from '@/components/molecules/ui-link/demo'
+import UiModalDemo from '@/components/molecules/ui-modal/demo'
 import UiSnackbar from '@/components/molecules/ui-snackbar/demo'
 import UiTabDemo from '@/components/molecules/ui-tab/demo'
 
@@ -28,7 +29,7 @@ export const routes = [
         name: 'Ui-image',
         path: '/image-demo',
         component: UiImageDemo,
-      },
+      }
     ]
   },
   {
@@ -52,6 +53,11 @@ export const routes = [
         component: UiLinkDemo,
       },
       {
+        name: 'Ui-modal',
+        path: '/modal-demo',
+        component: UiModalDemo,
+      },
+      {
         name: 'Ui-snackbar',
         path: '/snackbar-demo',
         component: UiSnackbar,
@@ -62,12 +68,6 @@ export const routes = [
         component: UiTabDemo,
       }
     ]
-  },
-  {
-    name: 'Cells',
-    path: '/cells',
-    component: ComponentsView,
-    children: []
   },
   {
     name: 'Organisms',
