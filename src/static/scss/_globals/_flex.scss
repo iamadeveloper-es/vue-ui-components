@@ -1,18 +1,39 @@
+@mixin flexModifiers{
+    &--center{
+        justify-content: center;
+    }
+    &--between{
+        justify-content: space-between;
+    }
+    &--align-center{
+        align-items: center;
+    }
+    &--wrap{
+        flex-wrap: wrap;
+    }
+}
 .flex{
     display: flex;
+    @include flexModifiers;
 }
 
 @media screen and (min-width: 768px){
     .flex-md{
         display: flex;
-        &__center{
-            justify-content: center;
-        }
-        &__between{
-            justify-content: space-between;
-        }
-        &__align-center{
-            align-items: center;
-        }
+        @include flexModifiers;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .flex-lg{
+        display: flex;
+        @include flexModifiers;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .flex-xl{
+        display: flex;
+        @include flexModifiers;
     }
 }

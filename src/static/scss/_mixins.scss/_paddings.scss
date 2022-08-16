@@ -1,0 +1,7 @@
+@mixin paddings($base){
+    padding: map-get($base , 'padding');
+    padding-left: map-get($base , 'left-padding');
+    padding-top: map-get($base , 'top-padding');
+    padding-right: map-get($base , 'right-padding');
+    padding-bottom: map-get($base , 'bottom-padding');
+}
