@@ -25,8 +25,9 @@ export default {
             snackbarModel: {
                 show: false,
                 headerText: 'i am a snackbar!',
-                icon: {
-                    class: 'fas fa-times ml-2',
+                iconModel: {
+                    icon: 'times',
+                    class: 'ml-2',
                     action: 'close'
                 },
                 // closeText : {

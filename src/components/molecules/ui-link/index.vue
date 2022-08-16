@@ -6,8 +6,8 @@
     >
         <span>{{ label }}</span>
         <ui-icon
-        v-if="icon"
-        :icon="icon"
+        v-if="iconModel"
+        :model="iconModel"
         ></ui-icon>
     </router-link>
 </template>
@@ -27,9 +27,9 @@ export default {
             type: String
         },
         classes: {
-            type: [Array]
+            type: [Array, String]
         },
-        icon :{
+        iconModel :{
             type: Object
         }
     }

@@ -14,8 +14,8 @@
     class="ui-button--pointers-none"
     >&#x2715;</span>
     <ui-icon
-    v-if="icon"
-    :icon="icon"
+    v-if="iconModel"
+    :model="iconModel"
     ></ui-icon>
     </button>
 </template>
@@ -49,7 +49,7 @@ export default {
             type: Boolean,
             default: false
         },
-        icon :{
+        iconModel :{
             type: Object
         }
     },

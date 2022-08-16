@@ -1,9 +1,31 @@
-@mixin link($base){
+@import '../../../../static/scss/_mixins.scss/paddings'; 
+@mixin link($base, $modifiers: ()){
     color: map-get($base, 'primary-text-color');
-    display: flex;
+    display: inline-flex;
     justify-content: flex-start;
     align-items: center;
+    @include paddings($modifiers);
+
     &--underline{
         text-decoration: underline;
+    }
+    
+    &--icon-top{
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    
+    &--icon-bottom{
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    &--icon-left{
+        flex-direction: row-reverse;
+    }
+    
+    &--icon-right{
+        flex-direction: row;
+        justify-content: center;
     }
 }

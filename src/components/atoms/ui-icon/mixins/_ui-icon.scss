@@ -1,4 +1,14 @@
-@mixin icon($base){
+@mixin icon($icon-modifiers, $icon-colors: ()){
     font-size: inherit;
-    font-size: map-get($base, 'size');
+    color: currentColor;
+    @each $key, $value in $icon-modifiers {
+        &--#{$key} {
+          font-size: $value;
+        }
+    }
+    @each $key, $value in $icon-colors {
+        &--#{$key} {
+          color: $value;
+        }
+    }
 }

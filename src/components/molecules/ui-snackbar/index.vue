@@ -3,11 +3,11 @@
         <div class="ui-snackbar"
         v-show="isShow"
         >
-            <div class="flex-md flex-md__between flex-md__align-center">
+            <div class="flex-md flex-md--between flex-md--align-center">
                 <p class="my-0">{{model.headerText}}</p>
                 <ui-icon
-                v-if="model.icon && Object.keys(model.icon).length"
-                :icon="model.icon"
+                v-if="model.iconModel && Object.keys(model.iconModel).length"
+                :model="model.iconModel"
                 @iconClicked="closeAction"
                 ></ui-icon>
                 <span
@@ -44,7 +44,7 @@ export default {
             return this.model.show
         },
         closeAction(){
-            return (this.model.icon && this.model.icon.action === 'close') 
+            return (this.model.iconModel && this.model.iconModel.action === 'close') 
             || (this.model.closeText && this.model.closeText.action === 'close')
             ? this.close 
             : null
@@ -66,4 +66,5 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style>
+</style>

@@ -1,13 +1,13 @@
 <template>
   <div class="ui-icon-demo">
-    <div class="flex-md flex-md__between">
+    <div class="flex-md flex-md--between">
         <div
         class="text-center"
         v-for="(icon, index) in setIcons"
         :key="index"
         >
             <ui-icon
-            :icon="icon"
+            :model="icon"
             @iconClicked="icon.action(icon)"
             ></ui-icon>
             <div
@@ -41,14 +41,20 @@ export default {
         setIcons() {
             return [
                 {
-                    class: 'fas fa-search',
+                    type: 'solid',
+                    icon: 'search',
+                    class: 'mb-2',
                     action: this.action
                 },
                 {
-                    class: 'fas fa-edit'
+                    type: 'solid',
+                    icon: 'edit',
+                    class: 'mb-2'
                 },
                 {
-                    class: 'far fa-file'
+                    type: 'regular',
+                    icon: 'file',
+                    class: 'mb-2'
                 }
             ]
         }
@@ -64,9 +70,10 @@ export default {
 <style lang="scss">
 @import '../mixins/ui-icon';
 
-$base: ('size': 18px);
+$icon-modifiers: ('medium': 18px, 'big': 20px);
+$icon-colors: ('red': red, 'big': 20px);
 
 .ui-icon{
-    @include icon($base);
+    @include icon($icon-modifiers, $icon-colors);
 }
 </style>

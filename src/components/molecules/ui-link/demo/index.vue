@@ -8,8 +8,8 @@
             <app-link
             :route="data.route"
             :label="data.label"
-            :classes="['ui-link--underline']"
-            :icon="data.icon"
+            :classes="['ui-link--underline', 'ui-link--icon-right']"
+            :iconModel="data.iconModel"
             ></app-link>
             <div>
                 <span>route: {{data.route}}</span>
@@ -31,11 +31,11 @@ export default {
                     label: 'Link 1'
                 },
                 {
-                    route: { name: 'user'},
+                    route: { name: 'Ui-link'},
                     label: 'Link 2'
                 },
                 {
-                    route: { name: 'user', params: { userId: '123' }},
+                    route: { name: 'Ui-link', params: { userId: '123' }},
                     label: 'Link 3'
                 },
                 {
@@ -45,8 +45,10 @@ export default {
                 {
                     route: { path: '/register', query: { plan: 'private' }},
                     label: 'Link 5 (icon)',
-                    icon: {
-                        class: 'fas fa-angle-right ml-2'
+                    iconModel: {
+                        
+                        icon: 'angle-right',
+                        class: 'ml-2',
                     }
                 }
             ]

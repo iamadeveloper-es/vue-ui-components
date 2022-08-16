@@ -16,7 +16,7 @@
                 <ui-button
                 :classes="['ui-button--regular', 'mx-auto']"
                 :btnText="btnData2.label"
-                :icon="{class: 'fas fa-plus ml-2'}"
+                :iconModel="btnData2.iconModel"
                 @clicked="counterIncrement(btnData2)"
                 ></ui-button>
                 <div class="mt-3">
@@ -55,8 +55,9 @@ export default {
             },
             btnData2: {
                 label: 'Click me',
-                icon: {
-                    class: 'fas fa-plus ml-2'
+                iconModel: {
+                    icon: 'plus',
+                    class: 'ml-2'
                 },
                 clickedTimes: 0
             },
