@@ -13,6 +13,8 @@ import UiSnackbar from '@/components/molecules/ui-snackbar/demo'
 import UiSpinner from '@/components/molecules/ui-spinner/demo'
 import UiTabDemo from '@/components/molecules/ui-tab/demo'
 
+import UiBottomNavigation from '@/components/organisms/ui-bottom-navigation/demo'
+
 Vue.use(VueRouter)
 
 export const routes = [
@@ -79,7 +81,13 @@ export const routes = [
     name: 'Organisms',
     path: '/organisms',
     component: ComponentsView,
-    children: []
+    children: [
+      {
+        name: 'Ui-bottom-navigation',
+        path: '/bottom-navigation-demo',
+        component: UiBottomNavigation,
+      }
+    ]
   },
 ]
 
