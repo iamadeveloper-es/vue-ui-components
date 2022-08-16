@@ -1,0 +1,20 @@
+@import '../../../../static/scss/_mixins.scss/paddings'; 
+
+@mixin bottomNavigation($base, $modifiers: ()){
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: map-get($base, 'menu-padding');
+    background-color: map-get($base, 'color');
+    box-shadow: map-get($base, 'elevation');
+    transition: all .3s ease-in-out;
+
+    &--hide{
+        transform: translateY(100%);
+    }
+
+    .ui-link{
+        @include paddings($modifiers)
+    }
+}
