@@ -1,0 +1,42 @@
+@mixin avatar($base: ('size', 50px), $color-modifiers: (), $background-modifiers: ()){
+    position: relative;
+    width: map-get($base, 'size');
+    height: map-get($base, 'size');
+    overflow: hidden;
+    border: map-get($base, 'border');
+
+    &--rounded{
+        border-radius: 100%;
+    }
+
+    @each $key, $value in $color-modifiers {
+        &--text-#{$key} {
+          color: $value;
+        }
+    }
+
+    @each $key, $value in $background-modifiers {
+        &--bg-#{$key} {
+          background-color: $value;
+        }
+    }
+
+    &__initials{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span{
+            font-size: map-get($base, 'size') / 2.3;
+            font-weight: bold;
+        }
+    }
+
+    .ui-image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
