@@ -8,6 +8,7 @@ import UiImageDemo from '@/components/atoms/ui-image/demo'
 import UiAvatar from '@/components/molecules/ui-avatar/demo'
 import UiBreadcrumbsDemo from '@/components/molecules/ui-breadcrumbs/demo'
 import UiButtonDemo from '@/components/molecules/ui-button/demo'
+import UiCard from '@/components/molecules/ui-card/demo'
 import UiLinkDemo from '@/components/molecules/ui-link/demo'
 import UiModalDemo from '@/components/molecules/ui-modal/demo'
 import UiSnackbar from '@/components/molecules/ui-snackbar/demo'
@@ -55,6 +56,11 @@ export const routes = [
         name: 'Ui-button',
         path: '/button-demo',
         component: UiButtonDemo,
+      },
+      {
+        name: 'Ui-card',
+        path: '/card-demo',
+        component: UiCard,
       },
       {
         name: 'Ui-link',

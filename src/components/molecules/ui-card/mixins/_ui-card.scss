@@ -1,0 +1,22 @@
+@mixin card($base){
+    position: relative;
+    overflow: hidden;
+    border: map-get($base, 'width-border') map-get($base, 'style-border') map-get($base, 'color-border');
+    border-radius: map-get($base, 'radius');;
+    
+    &__header, &__body, &__footer{
+
+    }
+
+    &__header{
+
+    }
+
+    &__body{
+        padding: map-get($base, 'body-padding');
+    }
+
+    &__footer{
+        padding: map-get($base, 'footer-padding');
+    }
+}
