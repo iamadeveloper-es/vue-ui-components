@@ -1,18 +1,27 @@
 export default {
     methods: {
         rippleEffect(ev){
-            const x = ev.clientX - ev.target.offsetLeft;
-            const y = ev.clientY - ev.target.offsetTop;
+            const element = this.$el;
 
-            const ripples = document.createElement('span');
-            ripples.setAttribute('class', 'ripple-span')
-            ripples.style.left = x + 'px';
-            ripples.style.top = y + 'px';
-            this.$el.appendChild(ripples);
+            const elementRect = element.getBoundingClientRect();
 
-            setTimeout(() => {
-                ripples.remove()
-            }, 1000);
+            const circle = document.createElement('span');
+
+            const diameter = Math.max(elementRect.width, elementRect.height);
+            const radius = diameter / 2;
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${ev.clientX - (elementRect.left + radius)}px`;
+            circle.style.top = `${ev.clientY - (elementRect.top + radius)}px`;
+
+            circle.classList.add('ripple-span');
+
+            const ripple = element.getElementsByClassName('ripple-span')[0];
+
+            if (ripple) {
+                ripple.remove();
+            }
+
+            element.appendChild(circle);
 
         }
     }
