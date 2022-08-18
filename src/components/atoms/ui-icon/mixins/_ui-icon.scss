@@ -1,4 +1,5 @@
 @mixin icon($icon-modifiers, $icon-colors: ()){
+    position: relative;
     font-size: inherit;
     color: currentColor;
     @each $key, $value in $icon-modifiers {

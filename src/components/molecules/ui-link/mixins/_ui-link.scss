@@ -1,5 +1,7 @@
-@import '../../../../static/scss/_mixins.scss/paddings'; 
+@import '../../../../static/scss/_mixins.scss/paddings';
+
 @mixin link($base, $modifiers: ()){
+    position: relative;
     color: map-get($base, 'primary-text-color');
     display: inline-flex;
     justify-content: flex-start;

@@ -58,13 +58,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../../../static/scss/_mixins.scss/_hover/hover-current-color';
 @import '../mixins/ui-link';
 
 $base : (
     'primary-text-color': var(--primary-blue)
     );
+$hover: ();
 
 .ui-link{
     @include link($base);
+    @include hoverCurrentColor($hover);
 }
 </style>

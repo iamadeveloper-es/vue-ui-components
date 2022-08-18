@@ -68,12 +68,15 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../../../static/scss/_mixins.scss/_hover/hover-current-color';
 @import '../mixins/ui-icon';
 
 $icon-modifiers: ('medium': 18px, 'big': 20px);
 $icon-colors: ('red': red, 'big': 20px);
+$hover: ();
 
 .ui-icon{
     @include icon($icon-modifiers, $icon-colors);
+    @include hoverCurrentColor($hover);
 }
 </style>

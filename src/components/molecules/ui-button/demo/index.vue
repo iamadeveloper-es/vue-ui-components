@@ -78,6 +78,7 @@ export default {
 
 <style lang="scss">
 @import '../mixins/ui-button';
+@import '../../../../static/scss/_mixins.scss/_hover/hover-current-color';
 
 $base : (
     'primary-color' : var(--primary-blue), 
@@ -86,8 +87,10 @@ $base : (
     'size-small': 4px 8px,
     'radius-size': 3px
     );
+$hover: ();
 
 .ui-button{
     @include button($base);
+    @include hoverCurrentColor($hover);
 }
 </style>
