@@ -1,11 +1,12 @@
 @import '_abstract/variables';
 @import '_globals/reset';
 @import '_globals/common';
+@import '_globals/_effects/ripple';
+@import '_globals/elevation';
 @import '_globals/grid';
 @import '_globals/flex';
 @import '_globals/spacing';
 @import '_globals/border';
 @import '_globals/breakpoints';
-@import '_animations/ripple';
 @import '_components/forms';
 @import '_layout/grid';
