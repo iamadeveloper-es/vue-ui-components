@@ -1,0 +1,12 @@
+@keyframes star-selected {
+  from{
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  to{
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+  }
+}

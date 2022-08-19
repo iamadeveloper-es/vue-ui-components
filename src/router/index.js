@@ -11,6 +11,7 @@ import UiButtonDemo from '@/components/molecules/ui-button/demo'
 import UiCard from '@/components/molecules/ui-card/demo'
 import UiLinkDemo from '@/components/molecules/ui-link/demo'
 import UiModalDemo from '@/components/molecules/ui-modal/demo'
+import UiRating from '@/components/molecules/ui-rating/demo'
 import UiSnackbar from '@/components/molecules/ui-snackbar/demo'
 import UiSpinner from '@/components/molecules/ui-spinner/demo'
 import UiTabDemo from '@/components/molecules/ui-tab/demo'
@@ -71,6 +72,11 @@ export const routes = [
         name: 'Ui-modal',
         path: '/modal-demo',
         component: UiModalDemo,
+      },
+      {
+        name: 'Ui-rating',
+        path: '/rating-demo',
+        component: UiRating,
       },
       {
         name: 'Ui-snackbar',
