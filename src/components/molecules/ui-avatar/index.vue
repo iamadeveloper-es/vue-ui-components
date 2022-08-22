@@ -7,7 +7,7 @@
   rounded ? 'ui-avatar--rounded': '', 
   hasListener ? 'cursor-pointer' : '',
   ]"
-  v-on="hasListener ? {click : handleEvent } : null"
+  v-on="hasListener ? {click : handleEvent} : null"
   >
     <ui-image
     v-if="avatarModel.image"
@@ -24,11 +24,15 @@
 
 <script>
 import UiImage from '../../atoms/ui-image';
+import UiMixinRippleEffect from '../../../mixin/rippleEffect'
 export default {
     name: 'ui-avatar',
     components: {
         UiImage
     },
+    mixins: [
+        UiMixinRippleEffect
+    ],
     props: {
         rounded: {
             type: Boolean,
@@ -58,6 +62,7 @@ export default {
     },
     methods:{
         handleEvent(ev){
+            this.rippleEffect(ev)
             this.$emit('avatarClicked', ev)
         }
     }
