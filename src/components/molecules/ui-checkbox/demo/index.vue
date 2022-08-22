@@ -34,7 +34,12 @@ export default {
     },
     methods:{
       getCheckValue(ev){
-        this.formData.user = ev
+        if(ev.checked){
+          this.formData.user = ev.value
+        }
+        else{
+          this.formData.user = undefined
+        }
       }
     }
 }

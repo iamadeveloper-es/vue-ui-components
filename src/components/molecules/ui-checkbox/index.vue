@@ -100,18 +100,20 @@ export default {
          * @param {Event} ev Evento
          */
         handleEvent(ev){
-            let val;
-            this.isActive = ev.target.checked
-            if(this.isActive && this.value){
-                val = ev.target.value
+            let val = {
+                checked: ev.target.checked,
             }
-            else if(!this.isActive && this.value){
-                val = undefined
+            this.isActive = ev.target.checked
+            if(this.value){
+                val.value = ev.target.value
             }
             else{
-                val = ev.target.checked
+                val.value = ev.target.checked
             }
             this.$emit('change', val)
+        },
+        emitEvent(value){
+            this.$emit('change', value)
         },
         /**
          * Configuración inicial del componente
@@ -119,6 +121,19 @@ export default {
         configComponent(){
             this.isActive = this.isChecked
             this.ariaChecked = this.isActive
+
+            if(this.initialStatus){
+                let val = {
+                    checked: true,
+                }
+                if(this.value){
+                    val.value = this.value
+                }
+                else{
+                    val.value = true
+                }
+                this.emitEvent(val)
+            }
         },
         foo(){
             debugger
