@@ -5,8 +5,10 @@
     >
       <select
       class="ui-input ui-input-select"
+      :class="[{'border-bottom-only': borderBottomOnly}, {'input-disabled': disabled}]"
       :name="inputRef"
       :id="inputRef"
+      :disabled="disabled"
       :aria-label="selectLabel"
       :aria-labelledby="ariaLabelledby"
       @input="$emit('input', $event.target.value)"
@@ -28,7 +30,7 @@
       </select>
       <label 
       :for="inputRef"
-      :class="{'ui-label-float' : floatingLabel}"
+      :class="[{'ui-label-float' : floatingLabel}, {'label-disabled': disabled}]"
       >{{ selectLabel }}
       </label>
     </div>
@@ -57,9 +59,17 @@ export default {
       type: Boolean,
       default: false,
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
     floatingLabel: {
       type: Boolean,
       default: false,
+    },
+    borderBottomOnly: {
+      type: Boolean,
+      default: false
     },
     ariaLabelledby: {
         type: String,

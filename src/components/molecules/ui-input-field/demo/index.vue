@@ -7,6 +7,7 @@
             <ui-input-field
             :label="data.label"
             :floatingLabel="data.floatingLabel"
+            :borderBottomOnly="data.borderBottomOnly"
             v-model="data.value"
             ></ui-input-field>
             <div class="output mt-2 mb-3">
@@ -27,6 +28,12 @@ export default {
                 {
                     label: 'Text field with floating label',
                     floatingLabel: true,
+                    value: ''
+                },
+                {
+                    label: 'Text field with floating label and border bottom',
+                    floatingLabel: true,
+                    borderBottomOnly: true,
                     value: ''
                 },
                 {

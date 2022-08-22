@@ -12,6 +12,15 @@
         cursor: no-drop;
     }
     &.input-disabled{
+        color: var(--tertiary-grey);
         border: 1px solid var(--tertiary-grey);
+    }
+    &.border-bottom-only{
+        border-top: transparent;
+        border-right: transparent;
+        border-left: transparent;
+        border-radius: 0;
+        //Borrar outline
+        outline: none;
     }
 }

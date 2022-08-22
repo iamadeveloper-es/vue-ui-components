@@ -2,5 +2,6 @@
 @import '../../../../static/scss/_mixins.scss/_forms/floating-label';
 
 @mixin selectField($field-base){
+    cursor: pointer;
     @include formInputField($field-base);
 }

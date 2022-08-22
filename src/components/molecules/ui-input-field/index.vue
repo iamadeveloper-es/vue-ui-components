@@ -1,10 +1,13 @@
 <template>
     <div
     class="ui-input-wrapper ui-floating-label"
-    :class="[(hasFloatingActive ? 'is-focused' : ''), {'input-disabled': disabled}]"
+    :class="[
+    (hasFloatingActive ? 'is-focused' : ''), 
+    ]"
     >
       <input
       class="ui-input-field"
+      :class="[{'border-bottom-only': borderBottomOnly}, {'input-disabled': disabled}]"
       :disabled="disabled"
       :type="inputType"
       :placeholder="placeholderLabel"
@@ -64,6 +67,10 @@ export default {
     floatingLabel: {
       type: Boolean,
       default: false,
+    },
+    borderBottomOnly: {
+      type: Boolean,
+      default: false
     },
     ariaLabelledby: {
       type: String,

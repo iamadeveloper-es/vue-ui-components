@@ -5,14 +5,15 @@
         :key="index"
         >
             <ui-select-field
-            :floatingLabel="true"
+            :floatingLabel="data.floatingLabel"
+            :borderBottomOnly="data.borderBottomOnly"
             :options="data.options"
             v-model="data.selectValue"
             ></ui-select-field>
             <div 
             class="output mt-2 mb-3" 
             v-if="data.options">
-                <span>Selected: {{data.selectValue}}</span>
+                <span>Value selected: {{data.selectValue ? data.selectValue : 'Nothing yet!'}}</span>
             </div>
         </div>
     </div>
@@ -33,6 +34,18 @@ export default {
                         { label: 'France', value: 'france' },
                         { label: 'Italy', value: 'italy' }
                     ],
+                    floatingLabel: true,
+                    selectValue: ''
+                },
+                {
+                    options: [
+                        { label: 'Default', value: 'default' },
+                        { label: 'Spain', value: 'spain' },
+                        { label: 'France', value: 'france' },
+                        { label: 'Italy', value: 'italy' }
+                    ],
+                    floatingLabel: true,
+                    borderBottomOnly: true,
                     selectValue: ''
                 },
                 {
