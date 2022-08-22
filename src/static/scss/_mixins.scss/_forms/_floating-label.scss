@@ -1,19 +1,9 @@
-.ui-input {
-    width: 100%;
-    display: block;
-    position: relative;
-    padding-left: 10px;
-    border-radius: 3px;
-    min-height: 45px;
-    background-color: var(--white);
-    border: 1px solid var(--secondary-grey);
-}
-.floating-label{
+@mixin floatingLabel($label-base) {
     position: relative;
     display: flex;
     flex-direction: column-reverse;
     label{
-        &.ui-label-floating{
+        &.ui-label-float{
             font-size: 13px;
             opacity: 0.9;
             pointer-events: none;
@@ -23,6 +13,9 @@
             transform: translate3d(0, 0, 0) scale(1);
             transform-origin: left top;
             transition: transform ease .2s;
+        }
+        &.label-disabled{
+            color: var(--tertiary-grey)
         }
     }
     &.is-focused label {
