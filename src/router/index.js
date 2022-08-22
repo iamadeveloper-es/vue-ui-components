@@ -13,9 +13,10 @@ import UiCheckboxDemo from '@/components/molecules/ui-checkbox/demo'
 import UiInputFieldDemo from '@/components/molecules/ui-input-field/demo'
 import UiLinkDemo from '@/components/molecules/ui-link/demo'
 import UiModalDemo from '@/components/molecules/ui-modal/demo'
-import UiRating from '@/components/molecules/ui-rating/demo'
-import UiSnackbar from '@/components/molecules/ui-snackbar/demo'
-import UiSpinner from '@/components/molecules/ui-spinner/demo'
+import UiRatingDemo from '@/components/molecules/ui-rating/demo'
+import UiSelectFieldDemo from '@/components/molecules/ui-select-field/demo'
+import UiSnackbarDemo from '@/components/molecules/ui-snackbar/demo'
+import UiSpinnerDemo from '@/components/molecules/ui-spinner/demo'
 import UiTabDemo from '@/components/molecules/ui-tab/demo'
 
 import UiCheckboxGroupDemo from '@/components/cells/ui-checkbox-group/demo'
@@ -91,17 +92,22 @@ export const routes = [
       {
         name: 'Ui-rating',
         path: '/rating-demo',
-        component: UiRating,
+        component: UiRatingDemo,
+      },
+      {
+        name: 'Ui-select-field',
+        path: '/select-field-demo',
+        component: UiSelectFieldDemo,
       },
       {
         name: 'Ui-snackbar',
         path: '/snackbar-demo',
-        component: UiSnackbar,
+        component: UiSnackbarDemo,
       },
       {
         name: 'Ui-spinner',
         path: '/spinner-demo',
-        component: UiSpinner,
+        component: UiSpinnerDemo,
       },
       {
         name: 'Ui-tab',

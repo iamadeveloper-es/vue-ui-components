@@ -1,0 +1,6 @@
+@import '../../../../static/scss/_mixins.scss/_forms/input-field';
+@import '../../../../static/scss/_mixins.scss/_forms/floating-label';
+
+@mixin selectField($field-base){
+    @include formInputField($field-base);
+}
