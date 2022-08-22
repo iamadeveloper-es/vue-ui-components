@@ -9,7 +9,7 @@
             :floatingLabel="data.floatingLabel"
             v-model="data.value"
             ></ui-input-field>
-            <div class="output mt-3">
+            <div class="output mt-2 mb-3">
                 <span>{{data.value}}</span>
             </div>
         </div>
