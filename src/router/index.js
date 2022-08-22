@@ -5,10 +5,11 @@ import ComponentsView from '@/pages/ui-view-components'
 import UiIconDemo from '@/components/atoms/ui-icon/demo'
 import UiImageDemo from '@/components/atoms/ui-image/demo'
 
-import UiAvatar from '@/components/molecules/ui-avatar/demo'
+import UiAvatarDemo from '@/components/molecules/ui-avatar/demo'
 import UiBreadcrumbsDemo from '@/components/molecules/ui-breadcrumbs/demo'
 import UiButtonDemo from '@/components/molecules/ui-button/demo'
-import UiCard from '@/components/molecules/ui-card/demo'
+import UiCardDemo from '@/components/molecules/ui-card/demo'
+import UiCheckboxDemo from '@/components/molecules/ui-checkbox/demo'
 import UiLinkDemo from '@/components/molecules/ui-link/demo'
 import UiModalDemo from '@/components/molecules/ui-modal/demo'
 import UiRating from '@/components/molecules/ui-rating/demo'
@@ -16,7 +17,10 @@ import UiSnackbar from '@/components/molecules/ui-snackbar/demo'
 import UiSpinner from '@/components/molecules/ui-spinner/demo'
 import UiTabDemo from '@/components/molecules/ui-tab/demo'
 
-import UiBottomNavigation from '@/components/organisms/ui-bottom-navigation/demo'
+import UiCheckboxGroupDemo from '@/components/cells/ui-checkbox-group/demo'
+
+
+import UiBottomNavigationDemo from '@/components/organisms/ui-bottom-navigation/demo'
 
 Vue.use(VueRouter)
 
@@ -46,7 +50,7 @@ export const routes = [
       {
         name: 'Ui-avatar',
         path: '/avatar-demo',
-        component: UiAvatar,
+        component: UiAvatarDemo,
       },
       {
         name: 'Ui-breadcrums',
@@ -61,7 +65,12 @@ export const routes = [
       {
         name: 'Ui-card',
         path: '/card-demo',
-        component: UiCard,
+        component: UiCardDemo,
+      },
+      {
+        name: 'Ui-checkbox',
+        path: '/checkbox-demo',
+        component: UiCheckboxDemo,
       },
       {
         name: 'Ui-link',
@@ -96,6 +105,18 @@ export const routes = [
     ]
   },
   {
+    name: 'Cells',
+    path: '/cells',
+    component: ComponentsView,
+    children: [
+      {
+        name: 'Ui-checkbox-group',
+        path: '/checkbox-group-demo',
+        component: UiCheckboxGroupDemo,
+      }
+    ]
+  },
+  {
     name: 'Organisms',
     path: '/organisms',
     component: ComponentsView,
@@ -103,7 +124,7 @@ export const routes = [
       {
         name: 'Ui-bottom-navigation',
         path: '/bottom-navigation-demo',
-        component: UiBottomNavigation,
+        component: UiBottomNavigationDemo,
       }
     ]
   },
