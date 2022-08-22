@@ -15,7 +15,7 @@ export default {
     computed:{
         setComponentName(){
             const routeName = this.$route.name
-            return routeName
+            return routeName.toLowerCase()
         }
     }
 }
