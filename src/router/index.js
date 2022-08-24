@@ -14,6 +14,7 @@ import UiCheckboxDemo from '@/components/molecules/ui-checkbox/demo'
 import UiInputFieldDemo from '@/components/molecules/ui-input-field/demo'
 import UiLinkDemo from '@/components/molecules/ui-link/demo'
 import UiModalDemo from '@/components/molecules/ui-modal/demo'
+import UiRadioDemo from '@/components/molecules/ui-radio/demo'
 import UiRatingDemo from '@/components/molecules/ui-rating/demo'
 import UiSelectFieldDemo from '@/components/molecules/ui-select-field/demo'
 import UiSnackbarDemo from '@/components/molecules/ui-snackbar/demo'
@@ -94,6 +95,11 @@ export const routes = [
         name: 'Ui-modal',
         path: '/modal-demo',
         component: UiModalDemo,
+      },
+      {
+        name: 'Ui-radio',
+        path: '/radio-demo',
+        component: UiRadioDemo,
       },
       {
         name: 'Ui-rating',
