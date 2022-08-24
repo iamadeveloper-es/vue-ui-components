@@ -1,19 +1,29 @@
 <template>
   <div 
-  v-if="showChip"
-  class="ui-chip"
+  v-if="showTag"
+  class="ui-tag"
   :class="[
-  `ui-chip--bg-${bgColor}`, `ui-chip--text-${textColor}`,
+  `ui-tag--bg-${bgColor}`, `ui-tag--text-${textColor}`,
   cClass,
-  outlined ? 'ui-chip--outlined' : '',
-  pill ? 'ui-chip--pill' : '']"
+  outlined ? 'ui-tag--outlined' : '',
+  pill ? 'ui-tag--pill' : '']"
   >
     <span
-    class="ui-chip__label"
+    v-if="filterIcon"
+    class="ui-tag__filter-icon"
+    >
+      <ui-icon
+      :model="filterIcon"
+      ></ui-icon>
+    </span>
+    <span
+    class="ui-tag__label"
+    :class="[filterIcon ? 'ml-1' : '',
+    close ? 'mr-1' : '']"
     >{{label}}</span>
     <span
     v-if="close"
-    class="ui-chip__close"
+    class="ui-tag__close"
     >
       <ui-icon
       :model="iconModel"
@@ -26,7 +36,7 @@
 <script>
 import UiIcon from '../../atoms/ui-icon'
 export default {
-    name: 'ui-chip',
+    name: 'ui-tag',
     components: {
       UiIcon
     },
@@ -57,22 +67,24 @@ export default {
       close: {
         type: Boolean,
         default: false
+      },
+      filterIcon: {
+        type: Object
       }
     },
     data() {
       return {
         iconModel: {
             icon: 'times',
-            class: 'ml-1',
             action: this.closeChip
         },
-        showChip: true
+        showTag: true
       }
     },
     methods: {
       closeChip(ev){
-        this.showChip = !this.showChip
-        this.$emit('close', ev)
+        this.showTag = !this.showTag
+        this.$emit('closeAction', ev)
       }
     }
 }

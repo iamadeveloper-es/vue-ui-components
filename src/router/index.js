@@ -11,7 +11,6 @@ import UiBreadcrumbsDemo from '@/components/molecules/ui-breadcrumbs/demo'
 import UiButtonDemo from '@/components/molecules/ui-button/demo'
 import UiCardDemo from '@/components/molecules/ui-card/demo'
 import UiCheckboxDemo from '@/components/molecules/ui-checkbox/demo'
-import UiChipDemo from '@/components/molecules/ui-chip/demo'
 import UiInputFieldDemo from '@/components/molecules/ui-input-field/demo'
 import UiLinkDemo from '@/components/molecules/ui-link/demo'
 import UiModalDemo from '@/components/molecules/ui-modal/demo'
@@ -21,6 +20,7 @@ import UiSelectFieldDemo from '@/components/molecules/ui-select-field/demo'
 import UiSnackbarDemo from '@/components/molecules/ui-snackbar/demo'
 import UiSpinnerDemo from '@/components/molecules/ui-spinner/demo'
 import UiTabDemo from '@/components/molecules/ui-tab/demo'
+import UiTagDemo from '@/components/molecules/ui-tag/demo'
 import UiTextArea from '@/components/molecules/ui-text-area/demo'
 
 import UiCheckboxGroupDemo from '@/components/cells/ui-checkbox-group/demo'
@@ -84,11 +84,6 @@ export const routes = [
         component: UiCheckboxDemo,
       },
       {
-        name: 'Ui-chip',
-        path: '/chip-demo',
-        component: UiChipDemo,
-      },
-      {
         name: 'Ui-input-field',
         path: '/input-field-demo',
         component: UiInputFieldDemo,
@@ -132,6 +127,11 @@ export const routes = [
         name: 'Ui-tab',
         path: '/tab-demo',
         component: UiTabDemo,
+      },
+      {
+        name: 'Ui-tag',
+        path: '/tag-demo',
+        component: UiTagDemo,
       },
       {
         name: 'Ui-text-area',

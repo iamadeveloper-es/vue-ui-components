@@ -31,7 +31,7 @@ export default {
             'solid': 'fas',
             'regular': 'far',
             'light': 'fal',
-            'brands': 'far',
+            'brands': 'fab',
             'default': 'fas'
           }
           const chossenType = iconTypes[this.model.type] ? iconTypes[this.model.type] : iconTypes['default']

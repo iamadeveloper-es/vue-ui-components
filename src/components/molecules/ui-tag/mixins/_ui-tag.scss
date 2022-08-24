@@ -1,4 +1,4 @@
-@mixin chip($base, $chip-modifiers){
+@mixin tag($base, $tag-modifiers){
     display: inline-flex;
     align-items: center;
     font-size: 14px;
@@ -15,13 +15,18 @@
         align-items: center;
     }
 
-    @each $key, $value in map-get($chip-modifiers, 'background-color') {
+    &__filter-icon{
+        display: inline-flex;
+        align-items: center;
+    }
+
+    @each $key, $value in map-get($tag-modifiers, 'background-color') {
         &--bg-#{$key} {
             background-color: $value;
         }
     };
 
-    @each $key, $value in map-get($chip-modifiers, 'text-color') {
+    @each $key, $value in map-get($tag-modifiers, 'text-color') {
         &--text-#{$key} {
             color: $value;
         }
