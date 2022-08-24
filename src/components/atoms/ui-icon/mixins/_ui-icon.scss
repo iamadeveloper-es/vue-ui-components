@@ -1,7 +1,9 @@
 @mixin icon($icon-modifiers, $icon-colors: ()){
+    padding: 5px;
     position: relative;
     font-size: inherit;
     color: currentColor;
+    overflow: hidden;
     @each $key, $value in $icon-modifiers {
         &--#{$key} {
           font-size: $value;

@@ -9,15 +9,18 @@
 
 <script>
 // Using FontAwesome V5.15.4
+import UiMixinRippleEffect from '../../../mixin/rippleEffect'
 export default {
   name: 'ui-icon',
+  mixins: [
+      UiMixinRippleEffect
+  ],
   props: {
     model: {
       type: Object,
       required: true
     }
   },
-  
   computed:{
         
         hasListener(){
@@ -38,6 +41,7 @@ export default {
   methods: {
     
     handleEvent(ev){
+      this.rippleEffect(ev)
       this.$emit('iconClicked', ev)
     }
   }

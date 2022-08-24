@@ -3,6 +3,7 @@
     class="ui-link"
     :class="classes"
     :to="route"
+    @click.native="rippleEffect($el)"
     >
         <span>{{ label }}</span>
         <ui-icon
@@ -12,12 +13,16 @@
     </router-link>
 </template>
 <script>
+import UiMixinRippleEffect from '../../../mixin/rippleEffect'
 import UiIcon from '../../atoms/ui-icon'
 export default {
     name: 'ui-link',
     components: {
         UiIcon
     },
+    mixins: [
+        UiMixinRippleEffect
+    ],
     props: {
         route:{
             type: [String, Object],

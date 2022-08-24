@@ -5,6 +5,7 @@
             <ui-card
             :width="'95%'"
             :elevation="8"
+            @cardClicked="action($event, 'Card')"
             >
                 <div slot="header">
                     <ui-image
@@ -20,7 +21,7 @@
                     <ui-button
                     :classes="['ui-button--regular']"
                     btnText="Action"
-                    @clicked="action"
+                    @clicked="action($event, 'Button')"
                     ></ui-button>
                 </div>
             </ui-card>
@@ -44,17 +45,18 @@
                     <ui-button
                     :classes="['ui-button--regular mr-2']"
                     btnText="Action"
-                    @clicked="action"
+                    @clicked="action($event, 'Button')"
                     ></ui-button>
                     <ui-button
                     :classes="['ui-button--regular']"
                     btnText="Action"
-                    @clicked="action"
+                    @clicked="action($event, 'Button')"
                     ></ui-button>
                 </div>
             </ui-card>
         </div>
     </div>
+    <p>{{outputAction}}</p>
   </div>
 </template>
 
@@ -75,12 +77,13 @@ export default {
                 src: 'dummy-image.jpg',
                 alt: 'Text image 1',
                 class: 'ui-image--fluid'
-            }
+            },
+            outputAction: ''
         }
     },
     methods: {
-        action(){
-            console.log('Action!')
+        action(ev, target){
+            this.outputAction = `Action on ${target}`
         }
     }
 }

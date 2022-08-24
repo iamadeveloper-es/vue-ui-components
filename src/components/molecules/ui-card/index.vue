@@ -1,7 +1,10 @@
 <template>
   <div class="ui-card"
-  :class="[cClass, elevation ? `elevation--${elevation}` : '']"
+  :class="[
+  cClass, elevation ? `elevation--${elevation}` : '',
+  hasListener ? 'cursor-pointer' : '']"
   :style="{'width': width}"
+  v-on="hasListener ? {click : handleEvent} : null"
   >
     <div 
     class="ui-card__header"
@@ -25,8 +28,12 @@
 </template>
 
 <script>
+import UiMixinRippleEffect from '../../../mixin/rippleEffect'
 export default {
     name: 'ui-card',
+    mixins: [
+        UiMixinRippleEffect
+    ],
     props: {
         cClass: {
             type:[Array, String]
@@ -37,6 +44,17 @@ export default {
         },
         elevation: {
             type: Number
+        }
+    },
+    computed:{
+        hasListener(){
+            return Object.keys(this.$listeners).length
+        },
+    },
+    methods:{
+        handleEvent(ev){
+            this.rippleEffect(ev)
+            this.$emit('cardClicked', ev)
         }
     }
 }
