@@ -1,0 +1,6 @@
+@import '../../../../static/scss/_mixins.scss/_forms/text-area';
+@import '../../../../static/scss/_mixins.scss/_forms/floating-label';
+
+@mixin textArea($field-base){
+    @include formTextArea($field-base);
+}

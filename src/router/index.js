@@ -20,6 +20,7 @@ import UiSelectFieldDemo from '@/components/molecules/ui-select-field/demo'
 import UiSnackbarDemo from '@/components/molecules/ui-snackbar/demo'
 import UiSpinnerDemo from '@/components/molecules/ui-spinner/demo'
 import UiTabDemo from '@/components/molecules/ui-tab/demo'
+import UiTextArea from '@/components/molecules/ui-text-area/demo'
 
 import UiCheckboxGroupDemo from '@/components/cells/ui-checkbox-group/demo'
 
@@ -125,6 +126,11 @@ export const routes = [
         name: 'Ui-tab',
         path: '/tab-demo',
         component: UiTabDemo,
+      },
+      {
+        name: 'Ui-text-area',
+        path: '/text-area-demo',
+        component: UiTextArea,
       }
     ]
   },
