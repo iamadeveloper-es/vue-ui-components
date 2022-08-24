@@ -6,8 +6,8 @@
       <select
       class="ui-input ui-input-select"
       :class="[{'border-bottom-only': borderBottomOnly}, {'input-disabled': disabled}]"
-      :name="inputRef"
-      :id="inputRef"
+      :name="componentId"
+      :id="componentId"
       :disabled="disabled"
       :aria-label="selectLabel"
       :aria-labelledby="ariaLabelledby"
@@ -29,7 +29,7 @@
         </option>
       </select>
       <label 
-      :for="inputRef"
+      :for="componentId"
       :class="[{'ui-label-float' : floatingLabel}, {'label-disabled': disabled}]"
       >{{ selectLabel }}
       </label>
@@ -37,8 +37,14 @@
 </template>
 
 <script>
+import UiMixinFloatingLabel from '../../../mixin/floatingLabel'
+import UiMixinRandomId from '../../../mixin/randomId'
 export default {
   name: "ui-select-field",
+  mixins: [
+    UiMixinFloatingLabel,
+    UiMixinRandomId
+  ],
   props: {
     options: {
       type: Array,
@@ -77,30 +83,15 @@ export default {
     }
   },
   data() {
-    return {
-        inputRef: undefined,
-        isfloatingLabel: false,
-        isLabel: false,
-    };
-  },
-  computed: {
-    hasFloatingActive(){
-      return !this.readOnly && (this.isfloatingLabel && this.floatingLabel) || (this.floatingLabel && this.value)
-    }
+    return {};
   },
   methods: {
-    floatingActive() {
-      this.isfloatingLabel = true;
-    },
-    floatingRemove() {
-      this.isfloatingLabel = false;
-    },
     handleChange(ev) {
       this.$emit("Change", ev);
     },
   },
   mounted(){
-    this.inputRef = `ui-select-field-${this._uid}`
+    this.setId('ui-text-area')
   }
 };
 

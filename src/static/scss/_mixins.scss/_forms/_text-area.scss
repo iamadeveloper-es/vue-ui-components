@@ -1,0 +1,28 @@
+@mixin formTextArea($input-base) {
+    resize: none;
+    width: 100%;
+    display: block;
+    position: relative;
+    padding-top: 20px;
+    padding-left: 10px;
+    border-radius: 3px;
+    min-height: 45px;
+    background-color: var(--white);
+    border: 1px solid var(--secondary-grey);
+
+    @at-root[readonly] {
+        cursor: no-drop;
+    }
+    &.text-area-disabled{
+        color: var(--tertiary-grey);
+        border: 1px solid var(--tertiary-grey);
+    }
+    &.border-bottom-only{
+        border-top: transparent;
+        border-right: transparent;
+        border-left: transparent;
+        border-radius: 0;
+        //Borrar outline
+        outline: none;
+    }
+}

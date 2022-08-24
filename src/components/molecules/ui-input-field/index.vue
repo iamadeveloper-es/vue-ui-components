@@ -15,8 +15,8 @@
       :readonly="readOnly"
       :aria-label="placeholderLabel || label"
       :aria-labelledby="ariaLabelledby"
-      :name="inputRef"
-      :id="inputRef"
+      :name="componentId"
+      :id="componentId"
       :value="value"
       @input="$emit('input', $event.target.value)"
       @focus="floatingLabel ? floatingActive() : null"
@@ -25,17 +25,19 @@
       <label 
       class="ui-label"
       :class="[{'ui-label-float' : floatingLabel}, {'label-disabled': disabled}]"
-      :for="inputRef"
+      :for="componentId"
       >{{ label }}
       </label>
     </div>
 </template>
 
 <script>
+import UiMixinFloatingLabel from '../../../mixin/floatingLabel'
 import UiMixinRandomId from '../../../mixin/randomId'
 export default {
   name: "ui-input-field",
   mixins: [
+    UiMixinFloatingLabel,
     UiMixinRandomId
   ],
   props: {
@@ -78,26 +80,7 @@ export default {
     }
   },
   data() {
-    return {
-      isfloatingLabel: false,
-      inputRef: undefined
-    };
-  },
-  computed: {
-    hasFloatingActive(){
-      return !this.readOnly && (this.isfloatingLabel && this.floatingLabel) || (this.floatingLabel && this.value)
-    }
-  },
-  methods: {
-    floatingActive() {
-      this.isfloatingLabel = true;
-    },
-    floatingRemove() {
-      this.isfloatingLabel = false;
-    }
-  },
-  mounted(){
-    this.inputRef = `app-select-field-${this._uid}`
+    return {};
   }
 };
 </script>
