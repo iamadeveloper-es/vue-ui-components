@@ -11,6 +11,9 @@
     &--wrap{
         flex-wrap: wrap;
     }
+    &--gap-20{
+        gap: 20px;
+    }
 }
 .flex{
     display: flex;
