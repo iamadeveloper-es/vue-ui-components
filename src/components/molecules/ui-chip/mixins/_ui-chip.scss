@@ -1,0 +1,38 @@
+@mixin chip($base, $chip-modifiers){
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 4px 6px;
+    border-radius: 3px;
+    opacity: .9;
+
+    &:hover{
+        opacity: 1;
+    }
+
+    &__close{
+        display: inline-flex;
+        align-items: center;
+    }
+
+    @each $key, $value in map-get($chip-modifiers, 'background-color') {
+        &--bg-#{$key} {
+            background-color: $value;
+        }
+    };
+
+    @each $key, $value in map-get($chip-modifiers, 'text-color') {
+        &--text-#{$key} {
+            color: $value;
+        }
+    };
+
+    &--outlined{
+        background-color: transparent;
+        border: 1px solid currentColor;
+    }
+
+    &--pill{
+        border-radius: 25px;
+    }
+}

@@ -11,6 +11,7 @@ import UiBreadcrumbsDemo from '@/components/molecules/ui-breadcrumbs/demo'
 import UiButtonDemo from '@/components/molecules/ui-button/demo'
 import UiCardDemo from '@/components/molecules/ui-card/demo'
 import UiCheckboxDemo from '@/components/molecules/ui-checkbox/demo'
+import UiChipDemo from '@/components/molecules/ui-chip/demo'
 import UiInputFieldDemo from '@/components/molecules/ui-input-field/demo'
 import UiLinkDemo from '@/components/molecules/ui-link/demo'
 import UiModalDemo from '@/components/molecules/ui-modal/demo'
@@ -81,6 +82,11 @@ export const routes = [
         name: 'Ui-checkbox',
         path: '/checkbox-demo',
         component: UiCheckboxDemo,
+      },
+      {
+        name: 'Ui-chip',
+        path: '/chip-demo',
+        component: UiChipDemo,
       },
       {
         name: 'Ui-input-field',
