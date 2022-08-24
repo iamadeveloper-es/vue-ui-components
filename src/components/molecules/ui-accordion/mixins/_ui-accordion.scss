@@ -1,0 +1,33 @@
+@mixin accordion($base){
+    &__header {
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: var(--vue-green);
+        line-height: 40px;
+        position: relative;
+        cursor: pointer;
+
+        &--title{
+            margin-left: 15px;
+        }
+    }
+    &__body {
+        margin-bottom: 10px;
+        overflow: hidden;
+        transition: .3s ease-out;
+
+        &--inner{
+            padding: 8px;
+            overflow-wrap: break-word;
+        }
+    }
+
+    .ui-collapse-open{
+        transform: rotate(-180deg);
+        transition: transform .2s ease-in-out;
+    }
+    .ui-collapse-close{
+        transform: rotate(0deg);
+        transition: transform .2s ease-in-out;
+    }
+}

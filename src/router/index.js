@@ -5,6 +5,7 @@ import ComponentsView from '@/pages/ui-view-components'
 import UiIconDemo from '@/components/atoms/ui-icon/demo'
 import UiImageDemo from '@/components/atoms/ui-image/demo'
 
+import UiAccordionDemo from '@/components/molecules/ui-accordion/demo'
 import UiAvatarDemo from '@/components/molecules/ui-avatar/demo'
 import UiBreadcrumbsDemo from '@/components/molecules/ui-breadcrumbs/demo'
 import UiButtonDemo from '@/components/molecules/ui-button/demo'
@@ -49,6 +50,11 @@ export const routes = [
     path: '/molecules',
     component: ComponentsView,
     children: [
+      {
+        name: 'Ui-accordion',
+        path: '/accordion-demo',
+        component: UiAccordionDemo,
+      },
       {
         name: 'Ui-avatar',
         path: '/avatar-demo',
