@@ -134,9 +134,6 @@ export default {
                 }
                 this.emitEvent(val)
             }
-        },
-        foo(){
-            debugger
         }
     },
     created(){
