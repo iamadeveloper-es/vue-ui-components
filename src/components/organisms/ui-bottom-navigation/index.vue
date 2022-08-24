@@ -1,6 +1,8 @@
 <template>
   <div class="ui-bottom-navigation"
-  :class="{'ui-bottom-navigation--hide' : hideNav}"
+  :class="[
+  {'ui-bottom-navigation--hide' : hideNav},
+  elevation ? `elevation--${elevation}` : '']"
   >
     <nav class="ui-bottom-navigation__nav">
       <ul 
@@ -37,6 +39,9 @@ export default {
     hideOnScroll: {
       type: Boolean,
       default: true
+    },
+    elevation: {
+        type: Number
     }
   },
   data(){

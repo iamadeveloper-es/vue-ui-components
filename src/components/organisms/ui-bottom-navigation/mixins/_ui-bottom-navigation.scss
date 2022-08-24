@@ -7,7 +7,6 @@
     bottom: 0;
     padding: map-get($base, 'menu-padding');
     background-color: map-get($base, 'color');
-    box-shadow: map-get($base, 'elevation');
     transition: all .3s ease-in-out;
 
     &--hide{

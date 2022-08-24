@@ -3,6 +3,7 @@
     <p>Fixed menu on the bottom of the screen, scroll up and down</p>
     <ui-bottom-navigation
     :links="bottomLinks"
+    :elevation="8"
     ></ui-bottom-navigation>
   </div>
 </template>
@@ -58,8 +59,7 @@ export default {
 
 $base: (
   'menu-padding': 15px 20px,
-  'color': var(--white),
-  'elevation': 0px 4px 14px var(--dark)
+  'color': var(--white)
 );
 
 $modifiers: (
@@ -68,5 +68,9 @@ $modifiers: (
 
 .ui-bottom-navigation{
     @include bottomNavigation($base, $modifiers)
+}
+
+.ui-bottom-navigation-demo {
+    height: 2000px;
 }
 </style>
