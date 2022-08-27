@@ -3,6 +3,7 @@
     font-size: inherit;
     color: currentColor;
     overflow: hidden;
+    transition: all .15s ease-in-out;
     @each $key, $value in $icon-modifiers {
         &--#{$key} {
           font-size: $value;
@@ -12,5 +13,9 @@
         &--#{$key} {
           color: $value;
         }
+    }
+
+    &--rotate-180-deg{
+      transform: rotate(-180deg);
     }
 }

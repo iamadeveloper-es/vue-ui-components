@@ -1,0 +1,37 @@
+@mixin dropdown($base){
+    position: relative;
+    height: auto;
+    padding: map-get($base , 'dropdown-padding');
+    background-color: var(--tertiary-grey);
+    cursor: pointer;
+
+    &__title{
+        display: inline-flex;
+        align-items: center;
+        span{
+            margin-left: map-get($base , 'icon-margin');
+        }
+    }
+
+    &__title, &__menu li a{
+        padding: map-get($base , 'children-padding'); 
+    }
+
+    &__menu{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: map-get($base , 'menu-width');
+        display: none;
+        padding: 0;
+        background-color: map-get($base , 'menu-bg-color');
+        z-index: 2;
+        &--show{
+            display: block;
+        }
+    }
+
+    .ui-link{
+        width: 100%;
+    }
+}

@@ -11,6 +11,8 @@ import UiBreadcrumbsDemo from '@/components/molecules/ui-breadcrumbs/demo'
 import UiButtonDemo from '@/components/molecules/ui-button/demo'
 import UiCardDemo from '@/components/molecules/ui-card/demo'
 import UiCheckboxDemo from '@/components/molecules/ui-checkbox/demo'
+import UiContextMenuDemo from '@/components/molecules/ui-context-menu/demo'
+import UiDropdownDemo from '@/components/molecules/ui-dropdown/demo'
 import UiInputFieldDemo from '@/components/molecules/ui-input-field/demo'
 import UiLinkDemo from '@/components/molecules/ui-link/demo'
 import UiModalDemo from '@/components/molecules/ui-modal/demo'
@@ -20,8 +22,9 @@ import UiSelectFieldDemo from '@/components/molecules/ui-select-field/demo'
 import UiSnackbarDemo from '@/components/molecules/ui-snackbar/demo'
 import UiSpinnerDemo from '@/components/molecules/ui-spinner/demo'
 import UiTabDemo from '@/components/molecules/ui-tab/demo'
+import UiTableDemo from '@/components/molecules/ui-table/demo'
 import UiTagDemo from '@/components/molecules/ui-tag/demo'
-import UiTextArea from '@/components/molecules/ui-text-area/demo'
+import UiTextAreaDemo from '@/components/molecules/ui-text-area/demo'
 
 import UiCheckboxGroupDemo from '@/components/cells/ui-checkbox-group/demo'
 
@@ -84,6 +87,16 @@ export const routes = [
         component: UiCheckboxDemo,
       },
       {
+        name: 'Ui-context-menu',
+        path: '/context-menu-demo',
+        component: UiContextMenuDemo,
+      },
+      {
+        name: 'Ui-dropdown',
+        path: '/dropdown-demo',
+        component: UiDropdownDemo,
+      },
+      {
         name: 'Ui-input-field',
         path: '/input-field-demo',
         component: UiInputFieldDemo,
@@ -129,6 +142,11 @@ export const routes = [
         component: UiTabDemo,
       },
       {
+        name: 'Ui-table',
+        path: '/table-demo',
+        component: UiTableDemo,
+      },
+      {
         name: 'Ui-tag',
         path: '/tag-demo',
         component: UiTagDemo,
@@ -136,7 +154,7 @@ export const routes = [
       {
         name: 'Ui-text-area',
         path: '/text-area-demo',
-        component: UiTextArea,
+        component: UiTextAreaDemo,
       }
     ]
   },
