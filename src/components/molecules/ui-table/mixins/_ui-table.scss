@@ -1,0 +1,47 @@
+@mixin table($base){
+    display: block;
+    width: 100%;
+
+    &--overflowX{
+        overflow-x: auto;
+    }
+
+    &--responsive{
+
+    }
+
+    &__content{
+        width: 100%;
+        max-width: 100%;
+        caption{
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        th, td{
+            text-align: left;
+            padding: 10px;
+            font-size: 13px;
+        }
+        tbody th, td{
+            border-top: 1px solid var(--secondary-grey)
+        }
+
+        .ui-table--no-border{
+            border: none;
+        }
+    }
+
+    &__flex-wrapper{
+        display: flex;
+    }
+
+    &__flex-item{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ui-icon{
+        font-size: 10px;
+    }
+}
