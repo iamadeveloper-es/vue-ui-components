@@ -4,6 +4,8 @@ import ComponentsView from '@/pages/ui-view-components'
 
 import UiIconDemo from '@/components/atoms/ui-icon/demo'
 import UiImageDemo from '@/components/atoms/ui-image/demo'
+import UiMoneyDemo from '@/components/atoms/ui-money/demo'
+
 
 import UiAccordionDemo from '@/components/molecules/ui-accordion/demo'
 import UiAvatarDemo from '@/components/molecules/ui-avatar/demo'
@@ -48,6 +50,11 @@ export const routes = [
         name: 'Ui-image',
         path: '/image-demo',
         component: UiImageDemo,
+      },
+      {
+        name: 'Ui-money',
+        path: '/money-demo',
+        component: UiMoneyDemo,
       }
     ]
   },
