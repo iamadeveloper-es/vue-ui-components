@@ -91,7 +91,7 @@ export default {
     },
   },
   mounted(){
-    this.setId('ui-text-area')
+    this.setId('select-field')
   }
 };
 
