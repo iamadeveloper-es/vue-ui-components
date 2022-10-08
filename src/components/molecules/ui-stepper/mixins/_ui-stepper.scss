@@ -1,0 +1,67 @@
+@mixin stepper($base){
+    overflow: hidden;
+    &__steps{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .step{
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        background-color: var(--white);
+        z-index: 10;
+        
+        &__label{
+            padding: 15px;
+        }
+
+        &__divider{
+            position: relative;
+            height: 2px;
+            overflow: hidden;
+            background-color: #e6e0e0;
+            flex: 1 1 1px;
+            z-index: 5;
+
+            &::before{
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                width: 0;
+                height: 100%;
+                // transform: scaleX(0);
+                transform-origin: left left;
+                background-color: #6b6969;
+                transition: all .5s ease-in-out;
+            }
+
+        }
+
+        &--last{
+            //Solución: hay que pasar el ancho de manera dinámica
+            // flex: 1 0 77px;
+            flex: 1 0 var(--element-width);
+        }
+
+        &--completed{
+            .step__label{
+                color: red
+            }
+
+            .step__divider::before{
+                width: 100%;
+            }
+        }
+
+        &--current{
+            .step__label{
+                color: green
+            }
+        }
+    }
+}

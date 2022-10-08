@@ -14,6 +14,7 @@ import UiButtonDemo from '@/components/molecules/ui-button/demo'
 import UiCardDemo from '@/components/molecules/ui-card/demo'
 import UiCheckboxDemo from '@/components/molecules/ui-checkbox/demo'
 import UiContextMenuDemo from '@/components/molecules/ui-context-menu/demo'
+import UiCustomSelectFieldDemo from '@/components/molecules/ui-custom-select-field/demo'
 import UiDropdownDemo from '@/components/molecules/ui-dropdown/demo'
 import UiInputFieldDemo from '@/components/molecules/ui-input-field/demo'
 import UiLinkDemo from '@/components/molecules/ui-link/demo'
@@ -23,6 +24,7 @@ import UiRatingDemo from '@/components/molecules/ui-rating/demo'
 import UiSelectFieldDemo from '@/components/molecules/ui-select-field/demo'
 import UiSnackbarDemo from '@/components/molecules/ui-snackbar/demo'
 import UiSpinnerDemo from '@/components/molecules/ui-spinner/demo'
+import UiStepperDemo from '@/components/molecules/ui-stepper/demo'
 import UiTabDemo from '@/components/molecules/ui-tab/demo'
 import UiTableDemo from '@/components/molecules/ui-table/demo'
 import UiTagDemo from '@/components/molecules/ui-tag/demo'
@@ -99,6 +101,11 @@ export const routes = [
         component: UiContextMenuDemo,
       },
       {
+        name: 'Ui-custom-select-field',
+        path: '/custom-select-field-demo',
+        component: UiCustomSelectFieldDemo,
+      },
+      {
         name: 'Ui-dropdown',
         path: '/dropdown-demo',
         component: UiDropdownDemo,
@@ -142,6 +149,11 @@ export const routes = [
         name: 'Ui-spinner',
         path: '/spinner-demo',
         component: UiSpinnerDemo,
+      },
+      {
+        name: 'Ui-stepper',
+        path: '/stepper-demo',
+        component: UiStepperDemo,
       },
       {
         name: 'Ui-tab',
