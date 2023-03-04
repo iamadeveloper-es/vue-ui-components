@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ComponentsView from '@/pages/ui-view-components'
 
+import UiBadgeDemo from '@/components/atoms/ui-badge/demo'
 import UiCheckboxDemo from '@/components/atoms/ui-checkbox/demo'
 import UiIconDemo from '@/components/atoms/ui-icon/demo'
 import UiImageDemo from '@/components/atoms/ui-image/demo'
@@ -43,6 +44,11 @@ export const routes = [
     path: '/atoms',
     component: ComponentsView,
     children: [
+      {
+        name: 'Ui-badge',
+        path: '/badge-demo',
+        component: UiBadgeDemo,
+      },
       {
         name: 'Ui-checkbox',
         path: '/checkbox-demo',

@@ -1,0 +1,34 @@
+@mixin badge($base){
+
+    $base-default: ( 
+        'y': -50%, 
+        'x': -50%,
+        'font-size': 9px,
+        'bg': red,
+        'cl': white,
+        'radius': 100%
+    );
+
+    $base-opt: map-merge($base-default, $base);
+
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: translate(map-get($base-opt, 'x'), map-get($base-opt, 'y'));
+    min-width: 15px;
+    min-height: 15px;
+    display: inline-block;
+    line-height: 0px;
+    border-radius: map-get($base-opt, 'radius');
+    background-color: map-get($base-opt, 'bg');
+    font-size: map-get($base-opt, 'font-size');
+
+    &__counter{
+        color: map-get($base-opt, 'cl');
+        display: inline-block;
+        padding-top: 50%;
+        padding-bottom: 50%;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
