@@ -17,6 +17,11 @@
     &--d-col{
         flex-direction: column;
     }
+
+    //Nuevos modificadores Eliminar los de arriba
+    &--y-center{
+        align-items: center;
+    }
 }
 .flex{
     display: flex;

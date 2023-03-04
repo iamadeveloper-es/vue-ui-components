@@ -2,13 +2,16 @@
 
     &__wrapper{
         display: flex;
+        gap: 15px;
     }
 
     &__item{
         position: relative;
-        width: 90px;
-        height: 90px;
-        cursor: pointer;
+        width: 40px;
+        
+        &.pointer{
+            cursor: pointer;
+        }
 
         &.clicked{
             position: relative;
@@ -31,9 +34,8 @@
 
     
     &__svg{
-        width: 100%;
-        height: 100%;
-        &.hovered polygon{
+        position: relative;
+        &.hovered path{
             fill: #ffd055
         }
     }

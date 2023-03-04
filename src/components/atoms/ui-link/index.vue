@@ -1,16 +1,14 @@
-<template>
-    <router-link
-    class="ui-link"
-    :class="classes"
-    :to="route"
-    @click.native="rippleEffect($el)"
-    >
-        <span>{{ label }}</span>
-        <ui-icon
-        v-if="iconModel"
-        :model="iconModel"
-        ></ui-icon>
-    </router-link>
+<template lang="pug">
+    router-link.ui-link(
+        :class="classes"
+        :to="route"
+        @click.native="rippleEffect($el)"
+    )
+        span {{ label }}
+        ui-con(
+            v-if="iconModel"
+            :model="iconModel"
+        )
 </template>
 <script>
 import UiMixinRippleEffect from '../../../mixin/rippleEffect'

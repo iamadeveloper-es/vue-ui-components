@@ -1,39 +1,26 @@
-<template>
-<div class="ui-checkbox"
-:class="[{'disabled': disabled}, cClass]" 
-:ref="componentId"
->
-  <div class="ui-checkbox__wrapper">
-    <span 
-    aria-hidden="true" 
-    class="ui-checkbox__icon"
-    :class="isActive ? setActiveColor : ''"
-    >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg">
-            <path
-            v-if="!isActive"
-            d="M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19Z"></path>
-            <path
-            v-else
-            d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-        </svg>
-    </span>
-    <input 
-    class="ui-checkbox__input" 
-    :aria-checked="initialStatus" 
-    :id="componentId" 
-    :disabled="disabled"
-    :checked="isActive"
-    role="checkbox" 
-    type="checkbox" 
-    :value="value"
-    @change="handleEvent($event)"
-    >
-  </div>
-    <label 
-    :for="componentId" 
-    class="ui-checkbox__label">{{label}}</label>
-  </div>
+<template lang="pug">
+    .ui-checkbox(
+        :class="[{'disabled': disabled}, cClass]" 
+        :ref="componentId"
+    )
+        .ui-checkbox__wrapper
+            span.ui-checkbox__icon( ria-hidden="true", :class="isActive ? setActiveColor : ''")
+                svg.v-icon__svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", role="img", aria-hidden="true")
+                    path(v-if="!isActive", d="M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19Z")
+                    path(v-else, d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z")
+            input.ui-checkbox__input(
+                :aria-checked="initialStatus" 
+                :id="componentId" 
+                :disabled="disabled"
+                :checked="isActive"
+                role="checkbox" 
+                type="checkbox" 
+                :value="value"
+                @change="handleEvent($event)"
+            )
+        label.ui-checkbox__label(
+            :for="componentId"
+        ) {{label}}
 </template>
 
 <script>
@@ -146,6 +133,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

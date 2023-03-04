@@ -1,39 +1,41 @@
-<template>
-<div class="ui-radio"
-:class="[{'disabled': disabled}, cClass]" 
-:ref="componentId"
->
-  <div class="ui-radio__wrapper">
-    <span 
-    aria-hidden="true" 
-    class="ui-radio__icon"
-    :class="isActive ? setActiveColor : ''"
-    >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg">
-            <path
-            v-if="!isActive"
-            d="M12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,16.42 16.42,20 12,20M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2Z"></path>
-            <path
-            v-else
-            d="M12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,16.42 16.42,20 12,20M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,7C9.24,7 7,9.24 7,12C7,14.76 9.24,17 12,17C14.76,17 17,14.76 17,12C17,9.24 14.76,7 12,7Z"></path>
-        </svg>
-    </span>
-    <input
-    class="ui-radio__input" 
-    :aria-checked="initialStatus"
-    :id="componentId"
-    :disabled="disabled"
-    :checked="isActive"
-    role="radio"
-    type="radio" 
-    :name="inputName"
-    :value="value"
-    @change="handleEvent($event)">
-  </div>
-    <label 
-    :for="componentId" 
-    class="ui-radio__label">{{label}}</label>
-  </div>
+<template lang="pug">
+    .ui-radio(
+        :class="[{'disabled': disabled}, cClass]" 
+        :ref="componentId"
+    )
+        .ui-radio__wrapper
+            span.ui-radio__icon(
+                aria-hidden="true",
+                :class="isActive ? setActiveColor : ''"
+            )
+                svg.v-icon__svg(
+                    xmlns="http://www.w3.org/2000/svg",
+                    viewBox="0 0 24 24",
+                    role="img",
+                    aria-hidden="true"
+                )
+                    path(
+                        v-if="!isActive",
+                        d="M12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,16.42 16.42,20 12,20M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2Z"
+                    )
+                    path(
+                        v-else,
+                        d="M12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,16.42 16.42,20 12,20M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,7C9.24,7 7,9.24 7,12C7,14.76 9.24,17 12,17C14.76,17 17,14.76 17,12C17,9.24 14.76,7 12,7Z"
+                    )
+            input.ui-radio__input(
+                :aria-checked="initialStatus"
+                :id="componentId"
+                :disabled="disabled"
+                :checked="isActive"
+                role="radio"
+                type="radio" 
+                :name="inputName"
+                :value="value"
+                @change="handleEvent($event)"
+            )
+        label.ui-radio__label(
+            :for="componentId" 
+        ) {{label}}
 </template>
 
 <script>

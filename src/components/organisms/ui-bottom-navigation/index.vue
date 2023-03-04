@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import UiLink from '../../molecules/ui-link';
+import UiLink from '../../atoms/ui-link';
 export default {
   name: 'ui-bottom-navigation',
   components: {

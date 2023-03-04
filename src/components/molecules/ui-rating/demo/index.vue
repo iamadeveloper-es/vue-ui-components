@@ -1,22 +1,18 @@
-<template>
-  <div class="ui-rating-demo">
-    <ui-rating
-    @ratingStats="getRatingStats($event)"
-    ></ui-rating>
-    <div class="output"
-    v-if="stats"
-    >
-      <div>
-        <span>Total items: {{stats.totalItems}}</span>
-      </div>
-      <div>
-        <span>Rating: {{stats.rating}}</span>
-      </div>
-      <div>
-        <span>Percent calc: {{stats.percent}}%</span>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  .ui-rating-demo
+    div
+      ui-rating(@ratingStats="getRatingStats($event)")
+      .output(v-if="stats")
+        div
+          span Total items: {{stats.totalItems}}
+        div
+          span Rating: {{stats.rating}}
+        div
+          span Percent calc: {{stats.percent}}%
+    hr
+    div
+      p Read Only
+      ui-rating(:readOnly="readOnlyModel")
 </template>
 
 <script>
@@ -28,7 +24,11 @@ export default {
     },
     data(){
       return {
-        stats: undefined
+        stats: undefined,
+        readOnlyModel: {
+          status: true,
+          activeItems: 3
+        }
       }
     },
     methods: {

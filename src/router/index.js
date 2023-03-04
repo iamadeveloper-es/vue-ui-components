@@ -2,9 +2,12 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ComponentsView from '@/pages/ui-view-components'
 
+import UiCheckboxDemo from '@/components/atoms/ui-checkbox/demo'
 import UiIconDemo from '@/components/atoms/ui-icon/demo'
 import UiImageDemo from '@/components/atoms/ui-image/demo'
+import UiLinkDemo from '@/components/atoms/ui-link/demo'
 import UiMoneyDemo from '@/components/atoms/ui-money/demo'
+import UiRadioDemo from '@/components/atoms/ui-radio/demo'
 
 
 import UiAccordionDemo from '@/components/molecules/ui-accordion/demo'
@@ -12,14 +15,11 @@ import UiAvatarDemo from '@/components/molecules/ui-avatar/demo'
 import UiBreadcrumbsDemo from '@/components/molecules/ui-breadcrumbs/demo'
 import UiButtonDemo from '@/components/molecules/ui-button/demo'
 import UiCardDemo from '@/components/molecules/ui-card/demo'
-import UiCheckboxDemo from '@/components/molecules/ui-checkbox/demo'
 import UiContextMenuDemo from '@/components/molecules/ui-context-menu/demo'
 import UiCustomSelectFieldDemo from '@/components/molecules/ui-custom-select-field/demo'
 import UiDropdownDemo from '@/components/molecules/ui-dropdown/demo'
 import UiInputFieldDemo from '@/components/molecules/ui-input-field/demo'
-import UiLinkDemo from '@/components/molecules/ui-link/demo'
 import UiModalDemo from '@/components/molecules/ui-modal/demo'
-import UiRadioDemo from '@/components/molecules/ui-radio/demo'
 import UiRatingDemo from '@/components/molecules/ui-rating/demo'
 import UiSelectFieldDemo from '@/components/molecules/ui-select-field/demo'
 import UiSnackbarDemo from '@/components/molecules/ui-snackbar/demo'
@@ -44,6 +44,11 @@ export const routes = [
     component: ComponentsView,
     children: [
       {
+        name: 'Ui-checkbox',
+        path: '/checkbox-demo',
+        component: UiCheckboxDemo,
+      },
+      {
         name: 'Ui-icon',
         path: '/icon-demo',
         component: UiIconDemo,
@@ -54,10 +59,20 @@ export const routes = [
         component: UiImageDemo,
       },
       {
+        name: 'Ui-link',
+        path: '/link-demo',
+        component: UiLinkDemo,
+      },
+      {
         name: 'Ui-money',
         path: '/money-demo',
         component: UiMoneyDemo,
-      }
+      },
+      {
+        name: 'Ui-radio',
+        path: '/radio-demo',
+        component: UiRadioDemo,
+      },
     ]
   },
   {
@@ -91,11 +106,6 @@ export const routes = [
         component: UiCardDemo,
       },
       {
-        name: 'Ui-checkbox',
-        path: '/checkbox-demo',
-        component: UiCheckboxDemo,
-      },
-      {
         name: 'Ui-context-menu',
         path: '/context-menu-demo',
         component: UiContextMenuDemo,
@@ -116,19 +126,9 @@ export const routes = [
         component: UiInputFieldDemo,
       },
       {
-        name: 'Ui-link',
-        path: '/link-demo',
-        component: UiLinkDemo,
-      },
-      {
         name: 'Ui-modal',
         path: '/modal-demo',
         component: UiModalDemo,
-      },
-      {
-        name: 'Ui-radio',
-        path: '/radio-demo',
-        component: UiRadioDemo,
       },
       {
         name: 'Ui-rating',

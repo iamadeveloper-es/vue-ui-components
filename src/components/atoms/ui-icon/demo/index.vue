@@ -1,28 +1,56 @@
-<template>
-  <div class="ui-icon-demo">
-    <div class="flex-md flex-md--between">
-        <div
-        class="text-center"
-        v-for="(icon, index) in setIcons"
-        :key="index"
-        >
-            <ui-icon
-            :model="icon"
-            @iconClicked="icon.action(icon)"
-            ></ui-icon>
-            <div
-            v-if="icon.action"
-            class="mt-2"
-            >{{iconActionOutput}}</div>
-            <div
-            v-else
-            class="mt-2"
-            >
-                Icon without event
-            </div>
-        </div>
-    </div>
-  </div>
+<template lang="pug">
+    .ui-icon-demo
+        p Iconos Solid (fas)
+        .flex-md.flex-md--y-center.flex-md--gap-20(
+            v-for="(icon, index) in icons.solid"
+            :key="`${icon.type}-${icon.icon}`"
+        )
+            .text-center
+                h5.mb-2 icono: {{icon.icon}}
+                ui-icon(
+                    :model="icon"
+                    @iconClicked="icon.action(icon)"
+                )
+            .mt-2(
+                v-if="icon.action"
+            ) {{iconActionOutput}}
+            .mt-2(
+                v-else
+            ) Icon without event
+        p Iconos Regular (far)
+        .flex-md.flex-md--y-center.flex-md--gap-20(
+            v-for="(icon, index) in icons.regular"
+            :key="`${icon.type}-${icon.icon}`"
+        )
+            .text-center
+                h5.mb-2 icono: {{icon.icon}}
+                ui-icon(
+                    :model="icon"
+                    @iconClicked="icon.action(icon)"
+                )
+            .mt-2(
+                v-if="icon.action"
+            ) {{iconActionOutput}}
+            .mt-2(
+                v-else
+            ) Icon without event
+        p Iconos Brands (fab)
+        .flex-md.flex-md--y-center.flex-md--gap-20(
+            v-for="(icon, index) in icons.brands"
+            :key="`${icon.type}-${icon.icon}`"
+        )
+            .text-center
+                h5.mb-2 icono: {{icon.icon}}
+                ui-icon(
+                    :model="icon"
+                    @iconClicked="icon.action(icon)"
+                )
+            .mt-2(
+                v-if="icon.action"
+            ) {{iconActionOutput}}
+            .mt-2(
+                v-else
+            ) Icon without event
 </template>
 
 <script>
@@ -34,34 +62,57 @@ export default {
     },
     data(){
         return {
-            iconActionOutput: 'Click me!'
+            iconActionOutput: 'Con click!'
         }
     },
     computed: {
-        setIcons() {
-            return [
-                {
-                    type: 'solid',
-                    icon: 'search',
-                    class: 'mb-2',
-                    action: this.action
-                },
-                {
-                    type: 'solid',
-                    icon: 'edit',
-                    class: 'mb-2'
-                },
-                {
-                    type: 'regular',
-                    icon: 'file',
-                    class: 'mb-2'
-                }
-            ]
+        icons() {
+            return {
+                solid: [
+                    {
+                        type: 'solid',
+                        icon: 'heart',
+                        class: 'mb-2',
+                        action: this.action
+                    },
+                    {
+                        type: 'solid',
+                        icon: 'edit',
+                        class: 'mb-2'
+                    }
+                ],
+                regular: [
+                    {
+                        type: 'regular',
+                        icon: 'heart',
+                        class: 'mb-2',
+                        action: this.action
+                    },
+                    {
+                        type: 'regular',
+                        icon: 'edit',
+                        class: 'mb-2'
+                    }
+                ],
+                brands: [
+                    {
+                        type: 'brands',
+                        icon: 'linkedin',
+                        class: 'mb-2',
+                        action: this.action
+                    },
+                    {
+                        type: 'brands',
+                        icon: 'vuejs',
+                        class: 'mb-2'
+                    }
+                ]
+            }
         }
     },
     methods: {
         action(ev){
-            this.iconActionOutput = `Icon cliked with class ${ev.class}`
+            this.iconActionOutput = `Click en icono ${ev.type} ${ev.icon} con clase ${ev.class}`
         }
     }
 }

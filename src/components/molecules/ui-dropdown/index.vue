@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import UiLink from '../ui-link'
+import UiLink from '../../atoms/ui-link'
 import UiIcon from '../../atoms/ui-icon'
 export default {
     name: 'ui-dropdown',

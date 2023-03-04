@@ -1,7 +1,5 @@
-<template>
-  <span class="ui-money">
-    {{formatedNumber}}
-  </span>
+<template lang="pug">
+  span.ui-money {{formatedNumber}}
 </template>
 
 <script>

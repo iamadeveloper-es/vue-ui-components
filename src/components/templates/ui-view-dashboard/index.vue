@@ -6,6 +6,9 @@
                 id="ui-nav"
                 class="ui-nav col-span-2 border-r-2 px-3"
                 >
+                    <!-- <input type="text"
+                    @input="setSearch($event)"
+                    > -->
                     <ul class="ui-menu">
                         <li
                         class="mt-2"
@@ -46,11 +49,20 @@ export default {
     data(){
         return{
             routes,
+            search: ''
+        }
+    },
+    computed:{
+        filteredRoutes(){
+            return this.routes.map(route => route.children.filter(child => child.name.includes(this.search)))
         }
     },
     methods:{
         toggleChildRoutes(ev){
             ev.target.nextSibling.classList.toggle('ui-menu-children-active')
+        },
+        setSearch(ev){
+            this.search = ev.target.value
         }
     }
 }

@@ -1,13 +1,13 @@
-<template>
-    <img 
-    :class="hasClass ? imgData.class : ''"
-    class="ui-image"
-    :src="require(`@/assets/${imgData.src}`)"
-    :alt="imgData.alt" 
-    :style="[hasWidth ? {width: imgData.size.width} : {}, hasHeight ? {height: imgData.size.height} : {}]"
-    :width="hasWidth ? imgData.size.width : ''"
-    :height="hasHeight ? imgData.size.height : ''"
-    >
+<template lang="pug">
+    img(
+        :class="hasClass ? imgData.class : ''"
+        class="ui-image"
+        :src="require(`@/assets/${imgData.src}`)"
+        :alt="imgData.alt" 
+        :style="[hasWidth ? {width: imgData.size.width} : {}, hasHeight ? {height: imgData.size.height} : {}]"
+        :width="hasWidth ? imgData.size.width : ''"
+        :height="hasHeight ? imgData.size.height : ''"
+    )
 </template>
 <script>
 export default {

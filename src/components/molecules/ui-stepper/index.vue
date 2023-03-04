@@ -59,9 +59,11 @@ export default {
          * @return {Number} índice del elemento current 
          */
         indexOfCurrent(){
-            return this.steps.findIndex(step => step.current) >= 0 
+            return this.steps.findIndex(step => step.current) >= 0 && this.current <= this.steps.length
                 ? this.steps.findIndex(step => step.current)
-                : 0
+                : this.current >= this.steps.length
+                    ? this.steps.length
+                    : 0
 
         },
         /**

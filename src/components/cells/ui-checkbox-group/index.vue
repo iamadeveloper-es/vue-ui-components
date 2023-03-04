@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import UiCheckbox from '../../molecules/ui-checkbox'
+import UiCheckbox from '../../atoms/ui-checkbox'
 export default {
     name: 'ui-checkbox-group',
     components: {

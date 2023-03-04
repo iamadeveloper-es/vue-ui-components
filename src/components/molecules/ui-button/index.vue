@@ -1,23 +1,18 @@
-<template>
-    <button 
-    class="ui-button"
-    :class="classes"
-    :type="btnType"
-    :disabled="disabled"
-    @click.stop="handleEvent($event), rippleEffect($event)"
-    >
-    <span
-    class="ui-button--pointers-none"
-    >{{btnText}}</span>
-    <span
-    v-if="isCloseBtn"
-    class="ui-button--pointers-none"
-    >&#x2715;</span>
-    <ui-icon
-    v-if="iconModel"
-    :model="iconModel"
-    ></ui-icon>
-    </button>
+<template lang="pug">
+    button.ui-button(
+        :class="classes",
+        :type="btnType",
+        :disabled="disabled"
+        @click.stop="handleEvent($event), rippleEffect($event)"
+    )
+        span.ui-button--pointers-none {{btnText}}
+        span.ui-button--pointers-none(
+            v-if="isCloseBtn"
+        ) &#x2715;
+        ui-icon(
+            v-if="iconModel"
+            :model="iconModel"
+        )
 </template>
 <script>
 import UiIcon from '../../atoms/ui-icon'

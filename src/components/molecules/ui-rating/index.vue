@@ -1,42 +1,34 @@
-<template>
-  <div class="ui-rating">
-    <div
-    class="ui-rating__wrapper">
-      <div class="ui-rating__item"
-      v-for="(item, index) in stars"
-      :key="index"
-      @click="rateAction(item.elementIndex), handleRate(item.elementIndex)"
-      :class="{'clicked' : indexSelected === item.elementIndex}"
-      >
-        <svg 
-        viewBox="0 0 100 100"
-        class="ui-rating__svg rating"
-        :class="{'hovered' : item.hovered}"
-        
-        :data-rating="item.elementIndex"
-        @mouseenter="hoverStars(item.elementIndex, true)"
-        @mouseleave="hoverStars(item.elementIndex)"
-        >
-          <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" 
-          :fill="item.active ? item.fill : initialFill"
-          style="fill-rule:nonzero;"
-          />
-        </svg>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  .ui-rating
+    .ui-rating__wrapper
+      .ui-rating__item(
+        v-for="(item, index) in stars",
+        :key="index",
+        v-on="!readOnly.status ? { click: () => [rateAction(item.elementIndex), handleRate(item.elementIndex)] } : {}",
+        :class="{'clicked' : indexSelected === item.elementIndex, 'pointer' : !readOnly.status}"
+      )
+        svg.ui-rating__svg.rating(
+          viewBox="0 0 39 36",
+          fill="none", 
+          xmlns="http://www.w3.org/2000/svg",
+          :class="{'hovered' : item.hovered}",
+          :data-rating="item.elementIndex",
+          @mouseenter="hoverStars(item.elementIndex, true)",
+          @mouseleave="hoverStars(item.elementIndex)"
+        )
+          path(
+            d="M19.4999 0L23.878 13.4742H38.0455L26.5837 21.8017L30.9618 35.2758L19.4999 26.9483L8.03814 35.2758L12.4162 21.8017L0.954346 13.4742H15.1219L19.4999 0Z", 
+            :fill="item.active ? item.fill : initialFill"
+          )
 </template>
 
 <script>
-//FIXME: Añadir a svg tag
-// viewBox="0 0 100 100" 
-// preserveAspectRatio="none"
 export default {
     name: 'ui-rating',
     props: {
       count: {
         type: Number,
-        default: 8
+        default: 5
       },
       initialFill: {
         type: String,
@@ -45,7 +37,14 @@ export default {
       activeFill :{
         type: String,
         default: '#ffd055'
-      }
+      },
+      readOnly: {
+        type: Object,
+        default: () => ({
+          status: false,
+          activeItems: undefined
+        })
+      },
     },
     data () {
       return {
@@ -55,26 +54,10 @@ export default {
       }
     },
     methods: {
-      configComponent(){
-        let arrayFromCount = Array.from(Array(this.count).keys())
-        arrayFromCount.forEach(item => {
-          this.stars.push(
-            {
-              elementIndex: item,
-              fill: this.activeFill,
-              active: false,
-              hovered: false
-            }
-          )
-        })
-      },
       rateAction(itemIndex){
         this.indexSelected = itemIndex
         return this.stars.map((item, index) => {
-          item.active = false
-          if(index <= itemIndex){
-            item.active = true
-          }
+          item.active = index <= itemIndex
         })
       },
       handleRate(ev){
@@ -86,16 +69,31 @@ export default {
         this.$emit('ratingStats', this.finalRate)
       },
       setRateStats(rate){
-        let total = 0;
+        let total = 0
         total = rate * 100 / this.count
         return total.toFixed(2)
       },
       hoverStars(itemIndex, status = false){
-        return this.stars.map((item, index) => {
-          item.hovered = false
-          if(index <= itemIndex && status){
-            item.hovered = true
-          }
+        if(!this.readOnly.status){
+          return this.stars.map((item, index) => {
+            item.hovered = false
+            if(index <= itemIndex && status){
+              item.hovered = true
+            }
+          })
+        }
+      },
+      configComponent(){
+        let arrayFromCount = Array.from(Array(this.count).keys())
+        arrayFromCount.forEach((item, index) => {
+          this.stars.push(
+            {
+              elementIndex: item,
+              fill: this.activeFill,
+              active: index + 1 <= this.readOnly.activeItems,
+              hovered: false
+            }
+          )
         })
       }
     },
