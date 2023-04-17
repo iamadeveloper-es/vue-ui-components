@@ -33,7 +33,7 @@ import UiTextAreaDemo from '@/components/molecules/ui-text-area/demo'
 
 import UiCheckboxGroupDemo from '@/components/cells/ui-checkbox-group/demo'
 
-
+import UiAudioPlayerDemo from '@/components/organisms/ui-audio-player/demo'
 import UiBottomNavigationDemo from '@/components/organisms/ui-bottom-navigation/demo'
 
 Vue.use(VueRouter)
@@ -204,6 +204,11 @@ export const routes = [
         name: 'Ui-bottom-navigation',
         path: '/bottom-navigation-demo',
         component: UiBottomNavigationDemo,
+      },
+      {
+        name: 'Ui-audio-player',
+        path: '/audio-player-demo',
+        component: UiAudioPlayerDemo,
       }
     ]
   },

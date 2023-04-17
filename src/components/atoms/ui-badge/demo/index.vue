@@ -21,6 +21,7 @@
           :classes="['ui-button--regular', 'mx-auto']",
           btnText="Reset Badge",
           @clicked="resetCounter")
+    span.test hola
 </template>
 
 <script>
@@ -66,7 +67,24 @@ export default {
 
 <style lang="scss">
 @import '../mixins/ui-badge';
+.test{
+  position: relative;
 
+  &::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: blue;
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+  }
+
+  &:hover::before{
+    width: 100%;
+  }
+}
 .notification{
   position: relative;
   display: inline-block;
